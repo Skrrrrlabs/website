@@ -1,0 +1,5 @@
+html { scroll-behavior: smooth; background: #090908; }
+html, body { margin: 0; padding: 0; }
+body { min-width: 320px; }
+button, a { -webkit-tap-highlight-color: transparent; }
+::selection { background: #b49a62; color: #090908; }
