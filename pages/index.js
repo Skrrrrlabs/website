@@ -91,7 +91,6 @@ export default function Home() {
           <a href={`mailto:${t.contactEmail}`}>{t.contactEmail}</a>
           <a href="https://skrrrrlabs.com">skrrrrlabs.com</a>
           <a href="https://t.me/skrrrrlabs" target="_blank" rel="noreferrer">Telegram ↗</a>
-          <a href="/event">Event ↗</a>
           <a href="/refchange">Referral Change ↗</a>
           <span>{t.contactHandle}</span>
         </div>
