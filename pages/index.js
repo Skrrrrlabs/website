@@ -35,7 +35,6 @@ export default function Home() {
         <section className={styles.hero} id="top" aria-labelledby="hero-title">
           <div className={styles.heroIndex}><span>{t.heroEyebrow}</span><span>Digital Assets · Global Derivatives</span></div>
           <div className={styles.heroBody}>
-            <p className={styles.heroBrand}>SkrrrrLabs</p>
             <p className={styles.kicker}>Market Structure Research</p>
             <h1 id="hero-title">{t.heroTitle}</h1>
             <p className={styles.heroDescription}>{t.heroDescription.map((line) => <span key={line}>{line}<br /></span>)}</p>
