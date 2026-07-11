@@ -28,7 +28,7 @@ export const copy = {
       { title: 'Evidence', description: 'Data before belief.' }, { title: 'Structure', description: 'Context before direction.' }, { title: 'Risk', description: 'Survival before profit.' }, { title: 'Probability', description: 'Probability before conviction.' }, { title: 'Process', description: 'Process before emotion.' },
     ],
     partnersTitle: 'Partner Exchanges', partnersIntro: 'The right platform supports the right execution. Compare available conditions and choose the environment that fits your own requirements.', viewDetails: 'View Details', disclosure: 'Referral links may provide benefits to SkrrrrLabs. Trading and investment decisions remain the responsibility of each user.',
-    footerDescriptor: 'Market Structure Research', footerTagline: 'Built on research. Proven through execution.', contactEmail: 'alpha@skrrrrlabs.com', contactHandle: '@skrrrrlabs',
+    footerDescriptor: 'Market Structure Research', footerTagline: 'Structure Before Prediction.', contactEmail: 'alpha@skrrrrlabs.com', contactHandle: '@skrrrrlabs',
   },
   ko: {
     metaTitle: 'SkrrrrLabs — 시장 구조 연구', metaDescription: '디지털 자산과 글로벌 파생시장의 구조, 유동성, 확률, 실행을 연구합니다.', nav: nav.ko,
