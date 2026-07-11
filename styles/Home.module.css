@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Manrope:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=DM+Mono:wght@300;400&family=Manrope:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,300&display=swap');
 
 .site{--ink:#090908;--paper:#eeeae1;--muted:#9a968d;--gold:#b49a62;--line:#2b2925;--panel:#11110f;background:var(--ink);color:var(--paper);min-height:100vh;overflow:hidden;font-family:'Manrope',sans-serif;font-weight:300}.site *{box-sizing:border-box}.site a{color:inherit;text-decoration:none}.site button{font:inherit}
 .header{height:88px;padding:0 clamp(24px,5.5vw,88px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:absolute;inset:0 0 auto;z-index:20}.wordmark{font-size:18.5px;font-weight:600;letter-spacing:-.035em;line-height:.92}.nav{display:flex;align-items:center;gap:30px;color:#d8d4cb;font:10px 'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase}.nav a,.desktopLang{transition:color .2s}.nav a:hover,.desktopLang:hover{color:var(--gold)}.desktopLang,.langButton,.menuButton{background:transparent;color:var(--paper);border:0;cursor:pointer}.desktopLang{border-left:1px solid var(--line);padding-left:30px;font:10px 'DM Mono',monospace;letter-spacing:.1em}.headerControls{display:none}
@@ -13,7 +13,7 @@
 @media(prefers-reduced-motion:reduce){.site *{scroll-behavior:auto!important;transition:none!important}}
 .site{font-weight:400;color:#f2efe8}.heroDescription{font-size:clamp(15.4px,1.54vw,20.9px);color:#b8b4ab}.philosophyGrid p,.titleRow>p{font-size:15.4px;color:#aaa69d}.marketList p,.topicList p,.partnerList p,.frameworkList p{font-size:14.3px;color:#aaa69d}.partnerList p{font-size:12.1px}.disclosure{color:#7b766e}
 .heroDescription span:first-child{color:var(--gold)}
-.wordmark{font-family:'Newsreader',serif;font-size:22px;font-weight:500}
+.wordmark{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700}
 .wordmark{font-weight:525;font-kerning:normal}.wordmarkLabs{letter-spacing:-.045em}
 .heroDescription{color:#c0bcb4;line-height:1.82}
 .highlight{color:var(--paper);font-style:italic;margin-top:32px!important}.systemsNote{color:var(--muted);font:11px 'DM Mono',monospace;line-height:1.7;max-width:560px;margin:28px 0 0}
