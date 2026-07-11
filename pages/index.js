@@ -10,7 +10,7 @@ export default function Home() {
   const t = copy[lang];
 
   return (
-    <div className={styles.site}>
+    <div className={styles.site} lang={lang}>
       <Head>
         <title>{t.metaTitle}</title>
         <meta name="description" content={t.metaDescription} />
