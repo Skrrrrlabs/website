@@ -1,308 +1,104 @@
-import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
+import { useState } from 'react';
+import Header from '../components/Header';
+import { SectionHeading, MarketList, FrameworkList, TopicList, PartnerList } from '../components/Sections';
+import { copy } from '../content/siteContent';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
-  const [lang, setLang] = useState('ko');
-  const [isMobile, setIsMobile] = useState(false);
-  const [bgmMuted, setBgmMuted] = useState(true);
-  const audioRef = useRef(null);
-
-  useEffect(() => {
-    const checkSize = () => setIsMobile(window.innerWidth <= 768);
-    checkSize();
-    window.addEventListener('resize', checkSize);
-    return () => window.removeEventListener('resize', checkSize);
-  }, []);
-
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.muted = bgmMuted;
-      audioRef.current.volume = 0.4;
-      audioRef.current.play().catch(() => {});
-    }
-  }, [bgmMuted]);
-
-  const t = lang === 'ko' ? TEXT_KO : TEXT_EN;
-  const backgroundImage = isMobile ? '/background-mobile.png' : '/background.png';
+  const [lang, setLang] = useState('en');
+  const t = copy[lang];
 
   return (
-    <div style={{ ...styles.pageWrapper }}>
+    <div className={styles.site}>
       <Head>
         <title>{t.metaTitle}</title>
         <meta name="description" content={t.metaDescription} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://skrrrrlabs.com/" />
         <link rel="icon" href="/skrrr_labs_favicon.ico" />
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="SkrrrrLabs" />
         <meta property="og:title" content={t.metaTitle} />
         <meta property="og:description" content={t.metaDescription} />
-        <meta property="og:image" content="https://crypto-labs-zeta.vercel.app/og-thumbnail.jpg" />
-        <meta property="og:url" content="https://crypto-labs-zeta.vercel.app/" />
+        <meta property="og:url" content="https://skrrrrlabs.com/" />
+        <meta property="og:image" content="https://skrrrrlabs.com/og-research.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t.metaTitle} />
         <meta name="twitter:description" content={t.metaDescription} />
-        <meta name="twitter:image" content="https://crypto-labs-zeta.vercel.app/og-thumbnail.jpg" />
+        <meta name="twitter:image" content="https://skrrrrlabs.com/og-research.png" />
       </Head>
 
-      <audio ref={audioRef} src="/banggooseok_trader_full.mp3" loop autoPlay />
+      <Header lang={lang} setLang={setLang} labels={t.nav} />
 
-      <button onClick={() => setBgmMuted(!bgmMuted)} style={{
-        position: 'fixed', bottom: 20, right: 20, zIndex: 10,
-        backgroundColor: '#000', color: '#fff',
-        padding: '8px 12px', borderRadius: '8px',
-        cursor: 'pointer', fontSize: '12px'
-      }}>
-        🎵 BGM {bgmMuted ? '켜기' : '끄기'}
-      </button>
+      <main>
+        <section className={styles.hero} id="top" aria-labelledby="hero-title">
+          <div className={styles.heroIndex}><span>Independent Research Lab</span><span>Digital Assets · Global Derivatives</span></div>
+          <div className={styles.heroBody}>
+            <p className={styles.heroBrand}>SkrrrrLabs</p>
+            <p className={styles.kicker}>Market Structure Research</p>
+            <h1 id="hero-title">{t.heroTitle}</h1>
+            <p className={styles.heroDescription}>{t.heroDescription}</p>
+          </div>
+          <div className={styles.heroActions}>
+            <a className={styles.primaryAction} href="#framework">{t.explore}<span aria-hidden="true">↓</span></a>
+            <a className={styles.secondaryAction} href="#partners">{t.partnerCta}<span aria-hidden="true">↓</span></a>
+          </div>
+        </section>
 
-      <header style={styles.navbar}>
-        <div style={styles.logo}>CRYPTO LABS</div>
-        <nav style={styles.menu}>
-          <a href="#" style={styles.menuLink}>{t.home}</a>
-          <a href="/event" style={styles.menuLink}>🎉 {t.event}</a>
-          <a href="/refchange" style={styles.menuLink}>🔁 {t.refchange}</a>
-          <a href="https://t.me/skrrrrlabs" target="_blank" rel="noopener noreferrer" style={styles.menuLink}>{t.contact}</a>
-          <button onClick={() => setLang(lang === 'ko' ? 'en' : 'ko')} style={styles.langToggle}>
-            {lang === 'ko' ? 'EN' : 'KR'}
-          </button>
-        </nav>
-      </header>
+        <section className={styles.section} id="research" aria-labelledby="philosophy-title">
+          <SectionHeading index="01" label={t.nav.research} />
+          <div className={styles.philosophyGrid}>
+            <h2 id="philosophy-title">{t.philosophyTitle}</h2>
+            <div>{t.philosophyBody.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
+          </div>
+        </section>
 
-      <main style={styles.mainContent}>
-        <h1 style={styles.title}>{t.mainTitle}</h1>
-        <p style={{ fontSize: '13px', color: '#ccc', marginTop: '-20px' }}>
-          Trading, Now Engineered by SKRRRR.
-        </p>
-        <div style={styles.cardContainer}>
-          {referralCards.map((card, index) => (
-            <div key={index} style={styles.card}>
-              <img src={card.img} alt={card.name} style={styles.logoImg} />
-              <p style={styles.description}>{card.desc[lang]}</p>
-              <a
-                href={card.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  ...styles.button,
-                  backgroundColor: card.color,
-                  color: card.textColor,
-                  ...(card.name === 'Binance' ? styles.goldHover : {}),
-                  ...(card.name === 'Bybit' ? styles.bybitHover : {}),  // ✅ BYBIT
-                  ...(card.name === 'OKX' ? styles.okxHover : {}),
-                  ...(card.name === 'Bitget' ? styles.bitgetHover : {})
-                }}
-                onMouseOver={e => {
-                  if (card.name === 'Binance') {
-                    e.target.style.filter = 'brightness(1.2) drop-shadow(0 0 6px gold)';
-                  } else if (card.name === 'Bybit') { // ✅ BYBIT
-                    e.target.style.filter = 'brightness(1.18) drop-shadow(0 0 5px #F6C800)';
-                  } else if (card.name === 'OKX') {
-                    e.target.style.filter = 'brightness(1.15) drop-shadow(0 0 4px black)';
-                  } else if (card.name === 'Bitget') {
-                    e.target.style.filter = 'brightness(1.15) drop-shadow(0 0 4px #1c72c6)';
-                  }
-                }}
-                onMouseOut={e => {
-                  e.target.style.filter = 'none';
-                }}
-              >
-                {t.joinNow}
-              </a>
-            </div>
-          ))}
-        </div>
+        <section className={styles.section} id="markets" aria-labelledby="markets-title">
+          <SectionHeading index="02" label={t.nav.markets} />
+          <div className={styles.titleRow}><h2 id="markets-title">{t.marketsTitle}</h2><p>{t.marketsIntro}</p></div>
+          <MarketList items={t.markets} />
+        </section>
+
+        <section className={`${styles.section} ${styles.lightSection}`} id="framework" aria-labelledby="framework-title">
+          <SectionHeading index="03" label={t.frameworkLabel} />
+          <div className={styles.titleRow}><h2 id="framework-title">{t.frameworkTitle}</h2><p>{t.frameworkIntro}</p></div>
+          <FrameworkList items={t.framework} />
+        </section>
+
+        <section className={styles.section} id="systems" aria-labelledby="systems-title">
+          <SectionHeading index="04" label={t.nav.systems} />
+          <div className={styles.titleRow}><h2 id="systems-title">{t.systemsTitle}</h2><p>{t.systemsIntro}</p></div>
+          <TopicList items={t.systems} />
+        </section>
+
+        <section className={styles.section} id="education" aria-labelledby="education-title">
+          <SectionHeading index="05" label={t.nav.education} />
+          <div className={styles.titleRow}><h2 id="education-title">{t.educationTitle}</h2><p>{t.educationIntro}</p></div>
+          <TopicList items={t.education} />
+          <div className={styles.resourceLinks}>
+            <a href="https://t.me/skrrrrlabs" target="_blank" rel="noreferrer">Telegram <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+
+        <section className={styles.partners} id="partners" aria-labelledby="partners-title">
+          <SectionHeading index="06" label={t.nav.partners} />
+          <div className={styles.titleRow}><h2 id="partners-title">{t.partnersTitle}</h2><p>{t.partnersIntro}</p></div>
+          <PartnerList items={t.partners} buttonLabel={t.viewDetails} />
+          <p className={styles.disclosure}>{t.disclosure}</p>
+        </section>
       </main>
 
-      <footer style={styles.footer}>
-        © 2025 CRYPTO LABS LEADER ALPHA. All rights reserved.
+      <footer className={styles.footer} id="contact">
+        <div><a className={styles.wordmark} href="#top">SkrrrrLabs</a><p>Market Structure Research</p></div>
+        <div className={styles.footerLinks}>
+          <a href="https://skrrrrlabs.com">skrrrrlabs.com</a>
+          <a href="https://t.me/skrrrrlabs" target="_blank" rel="noreferrer">Telegram ↗</a>
+          <a href="/event">Event ↗</a>
+          <a href="/refchange">Referral Change ↗</a>
+        </div>
+        <div className={styles.footerBase}><span>© {new Date().getFullYear()} SkrrrrLabs</span><span>Structure Before Prediction.</span></div>
       </footer>
-
-      <div style={{
-        ...styles.background,
-        backgroundImage: `url(${backgroundImage})`
-      }} />
     </div>
   );
 }
-
-const TEXT_KO = {
-  metaTitle: 'CRYPTO LABS 파트너 거래소',
-  metaDescription: 'CRYPTO LABS 파트너 거래소 페이지',
-  home: '홈',
-  refchange: '레퍼럴 변경',
-  event: '이벤트',
-  contact: '문의하기',
-  mainTitle: '🚀 CRYPTO LABS 파트너 거래소 🚀',
-  joinNow: '가입하기',
-};
-
-const TEXT_EN = {
-  metaTitle: 'CRYPTO LABS Official Referral',
-  metaDescription: 'CRYPTO LABS Global Referral Page',
-  home: 'Home',
-  refchange: 'Referral Change',
-  event: 'Event',
-  contact: 'Contact',
-  mainTitle: '🚀 CRYPTO LABS OFFICIAL REFERRAL 🚀',
-  joinNow: 'Join Now',
-};
-
-const referralCards = [
-  {
-    name: 'Binance',
-    img: '/binance.png',
-    desc: {
-      ko: '바이낸스 현물/선물 10% 수수료 할인!',
-      en: 'Binance Spot/Futures 10% Fee Discount!'
-    },
-    link: 'https://accounts.binance.com/register?ref=V5EBF1SH',
-    color: '#F0B90B',
-    textColor: '#000',
-  },
-  // ✅ BYBIT: Binance 다음, OKX 이전에 배치
-  {
-    name: 'Bybit',
-    img: '/bybit.png', // /public/bybit.png 준비!
-    desc: {
-      ko: '바이비트 평생 수수료 할인 + 20% 페이백!',
-      en: 'Bybit Lifetime Fee Discount + 20% Payback!'
-    },
-    link: 'https://partner.bybit.com/b/skrrrr', // ← 오빠 제휴 링크로 교체
-    color: '#F6C800',
-    textColor: '#000',
-  },
-  {
-    name: 'OKX',
-    img: '/okx.png',
-    desc: {
-      ko: 'OKX 평생 수수료 할인 + 20% 페이백!',
-      en: 'OKX Lifetime Fee Discount + 20% Payback!'
-    },
-    link: 'https://www.okx.com/join/SKRRRR',
-    color: '#000',
-    textColor: '#fff',
-  },
-  {
-    name: 'Bitget',
-    img: '/bitget.png',
-    desc: {
-      ko: '비트겟 평생 수수료 할인 + 20% 페이백!',
-      en: 'Bitget Lifetime Fee Discount + 20% Payback!'
-    },
-    link: 'https://partner.bitget.com/bg/5krrrr',
-    color: '#1c72c6',
-    textColor: '#fff',
-  },
-];
-
-const styles = {
-  pageWrapper: {
-    position: 'relative',
-    minHeight: '100vh',
-    overflow: 'hidden',
-    fontFamily: 'Arial, sans-serif',
-    color: '#fff',
-  },
-  background: {
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    zIndex: -1,
-    filter: 'blur(1.5px) brightness(0.75)',
-  },
-  navbar: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '20px 40px',
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-    position: 'relative',
-    zIndex: 1,
-    flexWrap: 'wrap',
-  },
-  logo: {
-    fontWeight: 'bold',
-    fontSize: '18px',
-  },
-  menu: {
-    display: 'flex',
-    gap: '20px',
-    alignItems: 'center',
-  },
-  menuLink: {
-    color: '#fff',
-    textDecoration: 'none',
-    fontSize: '14px',
-    whiteSpace: 'nowrap',
-  },
-  langToggle: {
-    backgroundColor: 'transparent',
-    border: '1px solid #fff',
-    color: '#fff',
-    padding: '3px 8px',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    fontSize: '12px'
-  },
-  mainContent: {
-    textAlign: 'center',
-    padding: '80px 20px 40px',
-  },
-  title: {
-    fontSize: '22px',
-    marginBottom: '40px',
-    textShadow: '0 0 6px rgba(255,255,255,0.3)'
-  },
-  cardContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-    gap: '30px',
-  },
-  card: {
-    backgroundColor: 'rgba(255, 255, 255, 0.88)',
-    color: '#000',
-    borderRadius: '12px',
-    padding: '20px',
-    width: '240px',
-    height: '270px',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-    transition: 'transform 0.2s ease',
-  },
-  logoImg: {
-    width: '120px',
-    maxHeight: '120px',
-    objectFit: 'contain',
-    marginBottom: '10px',
-  },
-  description: {
-    fontSize: '14px',
-    textAlign: 'center',
-    margin: '10px 0',
-  },
-  button: {
-    padding: '8px 18px',
-    borderRadius: '6px',
-    fontWeight: 'bold',
-    textDecoration: 'none',
-    transition: 'opacity 0.3s ease',
-    cursor: 'pointer',
-  },
-  goldHover: { transition: 'all 0.3s ease' },
-  bybitHover: { transition: 'all 0.3s ease' }, // ✅ BYBIT
-  okxHover: { transition: 'all 0.3s ease' },
-  bitgetHover: { transition: 'all 0.3s ease' },
-  footer: {
-    textAlign: 'center',
-    fontSize: '12px',
-    color: '#ccc',
-    padding: '30px 10px 10px',
-  },
-};
