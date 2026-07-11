@@ -27,7 +27,7 @@ export const copy = {
       { title: 'Evidence Over Narrative', description: 'A persuasive story is not enough without measurable evidence.' }, { title: 'Invalidation Before Conviction', description: 'Define where a scenario fails before considering its upside.' }, { title: 'Robustness Over Optimization', description: 'Prefer stable ideas across markets and periods over perfect historical results.' }, { title: 'Process Over Impulse', description: 'Repeated decisions should come from a system, not emotion.' }, { title: 'Capital Before Return', description: 'Prioritize survival and risk control before maximum return.' },
     ],
     partnersTitle: 'Partner Exchanges', partnersIntro: 'Exchange platforms used for market access, research, and execution. Compare the available conditions and select the environment that fits your own requirements.', viewDetails: 'View Details', disclosure: 'Referral links may provide benefits to SkrrrrLabs. Trading and investment decisions remain the responsibility of each user.',
-    footerDescriptor: 'Market Structure Research', footerTagline: 'Structure Before Prediction.', contactEmail: 'alpha@skrrrrlabs.com', contactHandle: '@skrrrlabs',
+    footerDescriptor: 'Market Structure Research', footerTagline: 'Structure Before Prediction.', contactEmail: 'alpha@skrrrrlabs.com', contactHandle: '@skrrrrlabs',
   },
   ko: {
     metaTitle: 'SkrrrrLabs — 시장 구조 연구', metaDescription: '디지털 자산과 글로벌 파생시장의 구조, 유동성, 확률, 실행을 연구합니다.', nav: nav.ko,
@@ -46,7 +46,7 @@ export const copy = {
       { title: '서사보다 근거', description: '설득력 있는 이야기도 측정 가능한 근거 없이는 충분하지 않습니다.' }, { title: '확신보다 무효화', description: '수익 가능성을 보기 전에 시나리오가 실패하는 지점을 정의합니다.' }, { title: '최적화보다 견고성', description: '완벽한 과거 결과보다 여러 시장과 구간에서 안정적인 아이디어를 우선합니다.' }, { title: '충동보다 과정', description: '반복되는 의사결정은 감정이 아니라 체계에서 나와야 합니다.' }, { title: '수익보다 자본', description: '최대 수익보다 생존과 리스크 통제를 우선합니다.' },
     ],
     partnersTitle: 'Partner Exchanges', partnersIntro: '시장 접근, 연구, 실행에 사용할 수 있는 거래 환경입니다. 각 거래소의 조건을 비교하고 자신에게 맞는 환경을 직접 선택하세요.', viewDetails: '자세히 보기', disclosure: '레퍼럴 링크를 통해 SkrrrrLabs가 혜택을 받을 수 있습니다. 거래소 선택과 거래·투자 판단의 책임은 사용자 본인에게 있습니다.',
-    footerDescriptor: '시장 구조 연구', footerTagline: '예측보다 구조.', contactEmail: 'alpha@skrrrrlabs.com', contactHandle: '@skrrrlabs',
+    footerDescriptor: '시장 구조 연구', footerTagline: '예측보다 구조.', contactEmail: 'alpha@skrrrrlabs.com', contactHandle: '@skrrrrlabs',
   },
 };
 
