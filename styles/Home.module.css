@@ -19,3 +19,4 @@
 .highlight{color:var(--paper);font-style:italic;margin-top:32px!important}.systemsNote{color:var(--muted);font:11px 'DM Mono',monospace;line-height:1.7;max-width:560px;margin:28px 0 0}
 .site[lang="en"]{font-family:'Geist','Inter',sans-serif}.site[lang="ko"]{font-family:'Pretendard Variable','Pretendard',sans-serif;letter-spacing:-.018em}.site[lang="ko"] .heroDescription{font-size:clamp(15px,1.5vw,20px);line-height:1.9;letter-spacing:-.025em}.site[lang="ko"] .philosophyGrid p,.site[lang="ko"] .titleRow>p{font-size:15px;line-height:2;letter-spacing:-.025em}.site[lang="ko"] .marketList p,.site[lang="ko"] .topicList p,.site[lang="ko"] .partnerList p,.site[lang="ko"] .frameworkList p{font-size:14px;line-height:1.85;letter-spacing:-.025em}.site[lang="ko"] .philosophyGrid h2,.site[lang="ko"] .titleRow h2{letter-spacing:-.075em}
 .header .wordmark{font-size:28px;font-weight:550;font-kerning:normal}
+.footerLinks{text-transform:none}
