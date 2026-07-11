@@ -33,12 +33,12 @@ export default function Home() {
 
       <main>
         <section className={styles.hero} id="top" aria-labelledby="hero-title">
-          <div className={styles.heroIndex}><span>Independent Research Lab</span><span>Digital Assets · Global Derivatives</span></div>
+          <div className={styles.heroIndex}><span>{t.heroEyebrow}</span><span>Digital Assets · Global Derivatives</span></div>
           <div className={styles.heroBody}>
             <p className={styles.heroBrand}>SkrrrrLabs</p>
             <p className={styles.kicker}>Market Structure Research</p>
             <h1 id="hero-title">{t.heroTitle}</h1>
-            <p className={styles.heroDescription}>{t.heroDescription}</p>
+            <p className={styles.heroDescription}>{t.heroDescription.map((line) => <span key={line}>{line}<br /></span>)}</p>
           </div>
           <div className={styles.heroActions}>
             <a className={styles.primaryAction} href="#framework">{t.explore}<span aria-hidden="true">↓</span></a>
@@ -50,7 +50,7 @@ export default function Home() {
           <SectionHeading index="01" label={t.nav.research} />
           <div className={styles.philosophyGrid}>
             <h2 id="philosophy-title">{t.philosophyTitle}</h2>
-            <div>{t.philosophyBody.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
+            <div>{t.philosophyBody.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<p className={styles.highlight}>{t.philosophyHighlight}</p></div>
           </div>
         </section>
 
@@ -70,15 +70,13 @@ export default function Home() {
           <SectionHeading index="04" label={t.nav.systems} />
           <div className={styles.titleRow}><h2 id="systems-title">{t.systemsTitle}</h2><p>{t.systemsIntro}</p></div>
           <TopicList items={t.systems} />
+          <p className={styles.systemsNote}>{t.systemsNote}</p>
         </section>
 
-        <section className={styles.section} id="education" aria-labelledby="education-title">
-          <SectionHeading index="05" label={t.nav.education} />
-          <div className={styles.titleRow}><h2 id="education-title">{t.educationTitle}</h2><p>{t.educationIntro}</p></div>
-          <TopicList items={t.education} />
-          <div className={styles.resourceLinks}>
-            <a href="https://t.me/skrrrrlabs" target="_blank" rel="noreferrer">Telegram <span aria-hidden="true">↗</span></a>
-          </div>
+        <section className={styles.section} id="principles" aria-labelledby="principles-title">
+          <SectionHeading index="05" label={t.nav.principles} />
+          <div className={styles.titleRow}><h2 id="principles-title">{t.principlesTitle}</h2><p>{t.principlesIntro}</p></div>
+          <TopicList items={t.principles} />
         </section>
 
         <section className={styles.partners} id="partners" aria-labelledby="partners-title">
@@ -90,14 +88,16 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer} id="contact">
-        <div><a className={styles.wordmark} href="#top">SkrrrrLabs</a><p>Market Structure Research</p></div>
+        <div><a className={styles.wordmark} href="#top">SkrrrrLabs</a><p>{t.footerDescriptor}</p></div>
         <div className={styles.footerLinks}>
+          <a href={`mailto:${t.contactEmail}`}>{t.contactEmail}</a>
           <a href="https://skrrrrlabs.com">skrrrrlabs.com</a>
           <a href="https://t.me/skrrrrlabs" target="_blank" rel="noreferrer">Telegram ↗</a>
           <a href="/event">Event ↗</a>
           <a href="/refchange">Referral Change ↗</a>
+          <span>{t.contactHandle}</span>
         </div>
-        <div className={styles.footerBase}><span>© {new Date().getFullYear()} SkrrrrLabs</span><span>Structure Before Prediction.</span></div>
+        <div className={styles.footerBase}><span>© {new Date().getFullYear()} SkrrrrLabs</span><span>{t.footerTagline}</span></div>
       </footer>
     </div>
   );
