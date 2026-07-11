@@ -17,7 +17,7 @@ export default function Header({ lang, setLang, labels }) {
 
   return (
     <header className={styles.header}>
-      <a className={styles.wordmark} href="#top" aria-label="SkrrrrLabs home">SkrrrrLabs</a>
+      <a className={styles.wordmark} href="#top" aria-label="SkrrrrLabs home">Skrrrr<span className={styles.wordmarkLabs}>Labs</span></a>
       <div className={styles.headerControls}>
         <button className={styles.langButton} onClick={() => setLang(lang === 'ko' ? 'en' : 'ko')} aria-label={lang === 'ko' ? 'Switch to English' : '한국어로 전환'}>{lang === 'ko' ? 'EN' : 'KR'}</button>
         <button className={styles.menuButton} onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="primary-nav"><span>{open ? 'Close' : 'Menu'}</span></button>
