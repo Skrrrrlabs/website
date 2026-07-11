@@ -11,8 +11,8 @@ export default function Header({ lang, setLang, labels }) {
   }, []);
 
   const links = [
-    ['#research', labels.research], ['#markets', labels.markets], ['#systems', labels.systems],
-    ['#education', labels.education], ['#partners', labels.partners], ['#contact', labels.contact],
+    ['#research', labels.research], ['#markets', labels.markets], ['#framework', labels.framework],
+    ['#systems', labels.systems], ['#principles', labels.principles], ['#partners', labels.partners], ['#contact', labels.contact],
   ];
 
   return (
