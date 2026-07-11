@@ -22,11 +22,11 @@ export default function Home() {
         <meta property="og:title" content={t.metaTitle} />
         <meta property="og:description" content={t.metaDescription} />
         <meta property="og:url" content="https://skrrrrlabs.com/" />
-        <meta property="og:image" content="https://skrrrrlabs.com/og-research.png" />
+        <meta property="og:image" content="https://skrrrrlabs.com/og-skrrrrlabs-v2.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t.metaTitle} />
         <meta name="twitter:description" content={t.metaDescription} />
-        <meta name="twitter:image" content="https://skrrrrlabs.com/og-research.png" />
+        <meta name="twitter:image" content="https://skrrrrlabs.com/og-skrrrrlabs-v2.png" />
       </Head>
 
       <Header lang={lang} setLang={setLang} labels={t.nav} />
