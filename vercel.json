@@ -6,6 +6,11 @@
       "permanent": true
     },
     {
+      "source": "/bybit",
+      "destination": "https://partner.bybit.com/b/skrrrr",
+      "permanent": true
+    },
+    {
       "source": "/okx",
       "destination": "https://www.okx.com/join/SKRRRR",
       "permanent": true

@@ -1,5 +1,6 @@
 export const exchanges = [
   { name: 'Binance', detail: { en: 'Spot and futures access', ko: '현물 및 선물 거래 환경' }, href: 'https://accounts.binance.com/register?ref=V5EBF1SH' },
+  { name: 'Bybit', detail: { en: 'Derivatives market access', ko: '파생상품 거래 환경' }, href: 'https://partner.bybit.com/b/skrrrr' },
   { name: 'OKX', detail: { en: 'Global market access', ko: '글로벌 거래 환경' }, href: 'https://www.okx.com/join/SKRRRR' },
   { name: 'Bitget', detail: { en: 'Digital asset market access', ko: '디지털 자산 거래 환경' }, href: 'https://partner.bitget.com/bg/5krrrr' },
 ];
