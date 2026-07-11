@@ -86,12 +86,11 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer} id="contact">
-        <div><a className={styles.wordmark} href="#top">SkrrrrLabs</a><p>{t.footerDescriptor}</p></div>
+        <div><a className={styles.wordmark} href="#top">Skrrrr<span className={styles.wordmarkLabs}>Labs</span></a><p>{t.footerDescriptor}</p></div>
         <div className={styles.footerLinks}>
           <a href={`mailto:${t.contactEmail}`}>{t.contactEmail}</a>
           <a href="https://skrrrrlabs.com">skrrrrlabs.com</a>
           <a href="https://t.me/skrrrrlabs" target="_blank" rel="noreferrer">Telegram ↗</a>
-          <a href="/refchange">Referral Change ↗</a>
           <span>{t.contactHandle}</span>
         </div>
         <div className={styles.footerBase}><span>© {new Date().getFullYear()} SkrrrrLabs</span><span>{t.footerTagline}</span></div>
