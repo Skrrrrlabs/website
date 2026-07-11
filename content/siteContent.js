@@ -51,4 +51,11 @@ export const copy = {
   },
 };
 
+copy.ko.heroDescription = ['시장은 무작위로 움직이지 않습니다.', '모든 판단에 앞서 가격, 유동성, 확률 뒤의 구조를 연구합니다.'];
+copy.ko.philosophyTitle = '예측을 넘어 구조로';
+copy.ko.philosophyBody = ['예측은 언제나 불확실합니다.', '구조는 관찰할 수 있습니다.', '실행에 앞서 조건을 확인하고, 확률을 측정하며, 무효화 기준을 정의합니다.'];
+copy.ko.philosophyHighlight = '무효화 기준이 분명할 때 시장 판단은 실전에서 유용합니다.';
+copy.ko.footerDescriptor = '시장 구조 연구';
+copy.ko.footerTagline = '연구로 시작하고, 실행으로 증명합니다.';
+
 Object.keys(copy).forEach((lang) => { copy[lang].partners = exchanges.map((exchange) => ({ ...exchange, detail: exchange.detail[lang] })); });
