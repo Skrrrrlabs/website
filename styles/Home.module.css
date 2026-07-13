@@ -26,3 +26,17 @@
 .site .primaryAction:hover{background:var(--canvas);color:var(--paper);border-color:var(--border)}
 .site .primaryAction:focus-visible{outline:2px solid var(--accent);outline-offset:4px;color:var(--canvas);background:var(--paper)}
 
+/* Final editorial balance for the desktop header, hero, and research status. */
+@media(min-width:901px){
+  .nav{margin-left:112px;gap:30px;font-size:11px;letter-spacing:.06em}
+  .heroInner{transform:translateY(-40px)}
+  .heroActions{column-gap:18px;row-gap:8px}
+  .textAction{flex-basis:100%}
+  #status .sectionLead{grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:6vw}
+  #status .sectionLead h2{font-size:clamp(42px,5.7vw,86px);max-width:720px}
+  #status .statusRow{font-size:11px;line-height:1.5;padding:17px 0}
+  #status .statusRow span:last-child[data-state="active"],
+  #status .statusRow span:last-child[data-state="in-progress"]{color:var(--accent)}
+}
+@media(max-width:900px){.nav{font-size:10px;letter-spacing:.1em}.heroInner{transform:none}.textAction{flex-basis:auto}}
+
