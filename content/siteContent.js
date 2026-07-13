@@ -1,13 +1,13 @@
 export const exchanges = [
-  { name: 'Binance', detail: { en: 'Spot and futures access', ko: '현물 및 선물 거래 환경' }, href: 'https://accounts.binance.com/register?ref=V5EBF1SH' },
-  { name: 'Bybit', detail: { en: 'Derivatives market access', ko: '파생상품 거래 환경' }, href: 'https://partner.bybit.com/b/skrrrr' },
-  { name: 'OKX', detail: { en: 'Global market access', ko: '글로벌 거래 환경' }, href: 'https://www.okx.com/join/SKRRRR' },
-  { name: 'Bitget', detail: { en: 'Digital asset market access', ko: '디지털 자산 거래 환경' }, href: 'https://partner.bitget.com/bg/5krrrr' },
+  { name: 'Binance', detail: { en: 'Global Digital Asset Infrastructure', ko: '글로벌 디지털 자산 인프라' }, href: 'https://accounts.binance.com/register?ref=V5EBF1SH' },
+  { name: 'Bybit', detail: { en: 'Derivatives and Tokenized Market Access', ko: '파생상품 및 토큰화 시장 접근' }, href: 'https://partner.bybit.com/b/skrrrr' },
+  { name: 'OKX', detail: { en: 'Multi-Asset Digital Market Infrastructure', ko: '멀티에셋 디지털 시장 인프라' }, href: 'https://www.okx.com/join/SKRRRR' },
+  { name: 'Bitget', detail: { en: 'Digital Assets and Emerging Market Access', ko: '디지털 자산 및 신흥시장 접근' }, href: 'https://partner.bitget.com/bg/5krrrr' },
 ];
 
 const nav = {
-  en: { research: 'Research', markets: 'Markets', framework: 'Framework', systems: 'Systems', principles: 'Principles', partners: 'Partners', contact: 'Contact' },
-  ko: { research: '연구', markets: '시장', framework: '프레임워크', systems: '시스템', principles: '원칙', partners: '파트너', contact: '문의' },
+  en: { research: 'Research', markets: 'Markets', framework: 'Framework', systems: 'Systems', principles: 'Principles', partners: 'Market Access', contact: 'Contact' },
+  ko: { research: '연구', markets: '시장', framework: '프레임워크', systems: '시스템', principles: '원칙', partners: '시장 접근', contact: '문의' },
 };
 
 export const copy = {
@@ -27,7 +27,7 @@ export const copy = {
     principlesTitle: 'What Guides the Research', principlesIntro: '', principles: [
       { title: 'Evidence', description: 'Data before belief.' }, { title: 'Structure', description: 'Context before direction.' }, { title: 'Risk', description: 'Survival before profit.' }, { title: 'Probability', description: 'Probability before conviction.' }, { title: 'Process', description: 'Process before emotion.' },
     ],
-    partnersTitle: 'Partner Exchanges', partnersIntro: 'The right platform supports the right execution. Compare available conditions and choose the environment that fits your own requirements.', viewDetails: 'View Details', disclosure: 'Referral links may provide benefits to SkrrrrLabs. Trading and investment decisions remain the responsibility of each user.',
+    partnersTitle: 'Execution Infrastructure', partnersIntro: 'Infrastructure for accessing digital assets, tokenized markets, and global derivatives. Compare available conditions and select the execution environment that best fits your research and trading workflow.', viewDetails: 'View Platform', disclosure: 'Selected platforms used for market research and execution. Some links may provide support to SkrrrrLabs at no additional cost to users. Platform availability, products, and regulatory conditions may vary by region. All trading and investment decisions remain the responsibility of each user.',
     footerDescriptor: 'Market Structure Research', footerTagline: 'Structure Before Prediction.', contactEmail: 'alpha@skrrrrlabs.com', contactHandle: '@skrrrrlabs',
   },
   ko: {
@@ -46,7 +46,7 @@ export const copy = {
     principlesTitle: '독립적 연구를 위한 원칙', principlesIntro: '확실성이 없는 환경에서 판단하기 위한 절제된 과정입니다.', principles: [
       { title: '서사보다 근거', description: '설득력 있는 이야기도 측정 가능한 근거 없이는 충분하지 않습니다.' }, { title: '확신보다 무효화', description: '수익 가능성을 보기 전에 시나리오가 실패하는 지점을 정의합니다.' }, { title: '최적화보다 견고성', description: '완벽한 과거 결과보다 여러 시장과 구간에서 안정적인 아이디어를 우선합니다.' }, { title: '충동보다 과정', description: '반복되는 의사결정은 감정이 아니라 체계에서 나와야 합니다.' }, { title: '수익보다 자본', description: '최대 수익보다 생존과 리스크 통제를 우선합니다.' },
     ],
-    partnersTitle: 'Partner Exchanges', partnersIntro: '시장 접근, 연구, 실행에 사용할 수 있는 거래 환경입니다. 각 거래소의 조건을 비교하고 자신에게 맞는 환경을 직접 선택하세요.', viewDetails: '자세히 보기', disclosure: '레퍼럴 링크를 통해 SkrrrrLabs가 혜택을 받을 수 있습니다. 거래소 선택과 거래·투자 판단의 책임은 사용자 본인에게 있습니다.',
+    partnersTitle: '실행 인프라', partnersIntro: '디지털 자산, 토큰화 시장, 글로벌 파생시장에 접근하기 위한 실행 환경입니다. 각 플랫폼의 조건을 비교한 뒤 자신의 연구 방식과 매매 흐름에 맞는 환경을 선택하세요.', viewDetails: '플랫폼 보기', disclosure: '시장 연구와 실전 실행에 활용하는 플랫폼입니다. 일부 링크를 통해 사용자에게 추가 비용 없이 SkrrrrLabs가 지원을 받을 수 있습니다. 플랫폼별 제공 상품과 이용 가능 여부, 규제 조건은 지역에 따라 다를 수 있습니다. 모든 거래 및 투자 판단의 책임은 사용자 본인에게 있습니다.',
     footerDescriptor: '시장 구조 연구', footerTagline: '예측보다 구조.', contactEmail: 'alpha@skrrrrlabs.com', contactHandle: '@skrrrrlabs',
   },
 };
