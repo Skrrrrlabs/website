@@ -1,61 +1,134 @@
 export const exchanges = [
-  { name: 'Binance', detail: { en: 'Global Digital Asset Infrastructure', ko: '글로벌 디지털 자산 인프라' }, href: 'https://accounts.binance.com/register?ref=V5EBF1SH' },
-  { name: 'Bybit', detail: { en: 'Derivatives and Tokenized Market Access', ko: '파생상품 및 토큰화 시장 접근' }, href: 'https://partner.bybit.com/b/skrrrr' },
-  { name: 'OKX', detail: { en: 'Multi-Asset Digital Market Infrastructure', ko: '멀티에셋 디지털 시장 인프라' }, href: 'https://www.okx.com/join/SKRRRR' },
-  { name: 'Bitget', detail: { en: 'Digital Assets and Emerging Market Access', ko: '디지털 자산 및 신흥시장 접근' }, href: 'https://partner.bitget.com/bg/5krrrr' },
+  { name: 'Binance', detail: { en: 'Primary source of current historical-data research', ko: '현재 역사 데이터 연구의 주요 출처' }, href: 'https://accounts.binance.com/register?ref=V5EBF1SH' },
+  { name: 'Bybit', detail: { en: 'Digital-asset derivatives platform', ko: '디지털 자산 파생상품 플랫폼' }, href: 'https://partner.bybit.com/b/skrrrr' },
+  { name: 'OKX', detail: { en: 'Digital-asset trading platform', ko: '디지털 자산 거래 플랫폼' }, href: 'https://www.okx.com/join/SKRRRR' },
+  { name: 'Bitget', detail: { en: 'Digital-asset trading platform', ko: '디지털 자산 거래 플랫폼' }, href: 'https://partner.bitget.com/bg/5krrrr' },
 ];
 
 const nav = {
-  en: { research: 'Research', markets: 'Markets', framework: 'Framework', systems: 'Systems', principles: 'Principles', partners: 'Market Access', contact: 'Contact' },
-  ko: { research: '연구', markets: '시장', framework: '프레임워크', systems: '시스템', principles: '원칙', partners: '시장 접근', contact: '문의' },
+  en: [
+    { href: '#status', label: 'Research' },
+    { href: '#process', label: 'Process' },
+    { href: '#markets', label: 'Markets' },
+    { href: '#about', label: 'About' },
+    { href: '#platforms', label: 'Platforms' },
+    { href: '#collaboration', label: 'Collaborate' },
+  ],
+  ko: [
+    { href: '#status', label: '연구 현황' },
+    { href: '#process', label: '연구 과정' },
+    { href: '#markets', label: '연구 범위' },
+    { href: '#about', label: '소개' },
+    { href: '#platforms', label: '플랫폼' },
+    { href: '#collaboration', label: '협업' },
+  ],
+};
+
+const common = {
+  contactEmail: 'alpha@skrrrrlabs.com',
+  contactHandle: '@skrrrrlabs',
+  platforms: exchanges.map((exchange) => ({ ...exchange, detail: exchange.detail.en })),
 };
 
 export const copy = {
   en: {
-    metaTitle: 'SkrrrrLabs — Market Structure Research', metaDescription: 'Independent research on digital assets and global derivatives. We study market structure, liquidity, probability, and execution.', nav: nav.en,
-    heroEyebrow: 'MARKET STRUCTURE RESEARCH', heroTitle: 'Structure Before Prediction.', heroDescription: ['Markets are rarely random.', 'We study the structure behind price, liquidity, and probability before every decision.'], explore: 'Explore the Framework', partnerCta: 'Market Access',
-    philosophyTitle: 'Beyond Prediction', philosophyBody: ['Prediction is uncertain.', 'Structure is observable.', 'We identify conditions, measure probability, and define invalidation before execution.'], philosophyHighlight: 'A market view is useful only when its invalidation is clear.',
-    marketsTitle: 'Markets We Observe', marketsIntro: 'Different markets move at different speeds. The need for structure remains the same.', markets: [
-      { title: 'Digital Assets', description: 'The fastest market demands the clearest structure.' }, { title: 'Global Indices', description: 'Macro conditions shape opportunity.' }, { title: 'Metals', description: 'Gold reflects uncertainty, liquidity, and real yields.' }, { title: 'Energy', description: 'Volatility creates asymmetric opportunity.' },
+    ...common,
+    metaTitle: 'SkrrrrLabs — Independent Market Structure Research',
+    metaDescription: 'Independent market-structure research focused on historical data, systematic backtesting and repeatable trading frameworks across digital assets and global derivatives.',
+    nav: nav.en,
+    heroEyebrow: 'MARKET STRUCTURE · DATA · SYSTEMATIC RESEARCH',
+    heroTitle: 'Structure Before Prediction.',
+    heroBody: 'SkrrrrLabs is an independent market-research project focused on transforming historical market data into structured, testable trading frameworks.',
+    heroBodySecondary: 'Current validation uses approximately 600GB of selected Binance historical data from the post-Ethereum ETF approval market regime.',
+    researchCta: 'Explore the Research Process',
+    platformsCta: 'Trading Platforms',
+    collaborationCta: 'Discuss a Collaboration',
+    pipeline: ['RAW DATA', 'SELECTION', 'NORMALIZATION', 'BACKTESTING', 'VALIDATION'],
+    statusLabel: 'CURRENT RESEARCH',
+    statusTitle: 'A filtered dataset, not a larger claim.',
+    statusIntro: 'The original archive contains approximately 1TB of Binance historical market data. Around 400GB is classified as legacy data from the pre-Ethereum ETF approval period and excluded from active validation. The working dataset contains approximately 600GB of selected post-approval market data used to study the current market regime.',
+    statusNote: 'No strategy is presented as validated until it survives testing across structure, volatility, time, adverse movement and execution conditions.',
+    metrics: [
+      { value: '≈1TB', label: 'Historical archive' },
+      { value: '≈600GB', label: 'Selected active dataset' },
+      { value: 'ACTIVE', label: 'Backtesting and validation' },
     ],
-    frameworkLabel: 'FRAMEWORK', frameworkTitle: 'From Observation to Execution', frameworkIntro: 'A trading decision is not a prediction. It is a structured hypothesis with defined conditions and risk.', framework: [
-      { title: 'Structure', description: 'Price is meaningless without context.' }, { title: 'Liquidity', description: 'Liquidity explains movement.' }, { title: 'Probability', description: 'Every decision is a probability.' }, { title: 'Invalidation', description: 'A scenario without invalidation is only an opinion.' }, { title: 'Time', description: 'Timing validates structure.' }, { title: 'Execution', description: 'Discipline turns research into execution.' },
+    statusRows: [
+      ['Data ingestion', 'Complete'], ['Historical archiving', 'Complete'], ['Regime separation', 'Active'], ['Data validation', 'Active'], ['Strategy backtesting', 'In progress'], ['Execution testing', 'Not published'], ['Live system', 'Not deployed'],
     ],
-    systemsTitle: 'Research. Validation. Execution.', systemsIntro: 'Research never ends. Our systems collect, test, and refine market observations.', systems: [
-      { title: 'Market Scanners', description: 'Identify instruments where multiple structural conditions overlap.' }, { title: 'Signal Validation', description: 'Measure what happens after a signal appears.' }, { title: 'Market Analytics', description: 'Organize structure, momentum, volatility, and market context.' }, { title: 'Risk Frameworks', description: 'Define invalidation, adverse movement, holding time, and survival.' }, { title: 'Research Automation', description: 'Turn repeated research into a consistent process.' },
-    ], systemsNote: 'These systems are internal research tools and are not presented as guaranteed trading products.',
-    principlesTitle: 'What Guides the Research', principlesIntro: '', principles: [
-      { title: 'Evidence', description: 'Data before belief.' }, { title: 'Structure', description: 'Context before direction.' }, { title: 'Risk', description: 'Survival before profit.' }, { title: 'Probability', description: 'Probability before conviction.' }, { title: 'Process', description: 'Process before emotion.' },
+    processLabel: 'RESEARCH PROCESS',
+    processTitle: 'From raw data to a decision framework.',
+    processIntro: 'Collecting more data does not create an edge by itself. The objective is to define comparable conditions, reject weak assumptions and convert surviving observations into repeatable processes.',
+    process: [
+      ['Define the regime', 'Separate structurally different market environments before testing.'],
+      ['Build the dataset', 'Clean, align and normalize historical exchange data.'],
+      ['Form the hypothesis', 'Specify structure, liquidity, volatility, time and invalidation conditions.'],
+      ['Backtest', 'Measure outcomes, adverse movement, holding time and execution cost.'],
+      ['Stress test', 'Test whether a result survives different instruments and market conditions.'],
+      ['Validate or reject', 'Discard hypotheses when the evidence does not support them.'],
+      ['Automate', 'Convert only repeatable and measurable processes into systems.'],
     ],
-    partnersTitle: 'Execution Infrastructure', partnersIntro: 'Infrastructure for accessing digital assets, tokenized markets, and global derivatives. Compare available conditions and select the execution environment that best fits your research and trading workflow.', viewDetails: 'View Platform', disclosure: 'Selected platforms used for market research and execution. Some links may provide support to SkrrrrLabs at no additional cost to users. Platform availability, products, and regulatory conditions may vary by region. All trading and investment decisions remain the responsibility of each user.',
-    footerDescriptor: 'Market Structure Research', footerTagline: 'Structure Before Prediction.', contactEmail: 'alpha@skrrrrlabs.com', contactHandle: '@skrrrrlabs',
+    marketsLabel: 'RESEARCH SCOPE',
+    marketsTitle: 'Markets under observation.',
+    marketsIntro: 'Digital assets remain the primary research focus. Other markets provide context for testing whether a framework travels beyond one instrument set.',
+    markets: [
+      { title: 'Digital Assets', description: 'Historical exchange data, derivatives structure, liquidity behavior and market-regime analysis.', primary: true },
+      { title: 'NASDAQ', description: 'Index structure, volatility, macro conditions and derivatives behavior.' },
+      { title: 'Gold', description: 'Dollar liquidity, real yields, defensive flows and structural price behavior.' },
+    ],
+    validationLabel: 'VALIDATION SCOPE',
+    validationTitle: 'The goal is not to find a pattern that worked once.',
+    validationIntro: 'The goal is to identify where, when and under what conditions it stops working.',
+    validation: ['Structure', 'Invalidation', 'Time', 'Adverse movement', 'Execution conditions'],
+    principlesLabel: 'PRINCIPLES',
+    principlesTitle: 'Rules for staying honest.',
+    principles: ['Data before belief.', 'Context before direction.', 'Survival before profit.', 'Probability before conviction.', 'Process before emotion.', 'Rejection before deployment.'],
+    aboutLabel: 'ABOUT',
+    aboutTitle: 'Independent by design.',
+    aboutBody: ['SkrrrrLabs is an independent market-research project built around a simple belief: trading decisions should be tested before they are trusted.', 'The project began with digital-asset market data and is being developed into a broader research framework for crypto, index and metals trading.', 'Its current focus is historical-data validation, systematic backtesting and the design of repeatable decision processes.', 'SkrrrrLabs does not manage client capital, provide guaranteed trading signals or present unfinished research as proven performance.'],
+    collaborationLabel: 'COLLABORATION',
+    collaborationTitle: 'Good systems are rarely built from one discipline.',
+    collaborationBody: 'SkrrrrLabs is open to thoughtful conversations with developers, data engineers, researchers and systematic traders working on market data, backtesting, execution infrastructure or research automation.',
+    collaborationNote: 'No sales pitch is required. A clear problem, useful expertise or serious research question is enough.',
+    collaborators: ['Python developers', 'Data engineers', 'Quantitative researchers', 'Systematic traders', 'Market-data infrastructure builders', 'Research partners'],
+    startConversation: 'Start a Conversation',
+    platformsLabel: 'TRADING PLATFORMS',
+    platformsTitle: 'Research first. Execution second.',
+    platformsIntro: 'SkrrrrLabs conducts independent market research. Trading execution is performed through external platforms.',
+    openPlatform: 'Open platform',
+    affiliateDisclosure: 'Some outbound links may be affiliate links and may support the continued development and operation of SkrrrrLabs at no additional cost to the user.',
+    footerDescriptor: 'Independent Market Structure Research',
+    footerStatement: 'SkrrrrLabs is an independent research project. Nothing on this website constitutes investment advice, financial advice or a guarantee of future performance.',
+    footerLinks: { process: 'Research Process', status: 'Research Status', markets: 'Markets', about: 'About', collaboration: 'Collaboration', platforms: 'Trading Platforms', risk: 'Risk Disclosure', affiliate: 'Affiliate Disclosure', privacy: 'Privacy', terms: 'Terms', contact: 'Contact' },
   },
   ko: {
-    metaTitle: 'SkrrrrLabs — 시장 구조 연구', metaDescription: '디지털 자산과 글로벌 파생시장의 구조, 유동성, 확률, 실행을 연구합니다.', nav: nav.ko,
-    heroEyebrow: 'MARKET STRUCTURE RESEARCH', heroTitle: '예측보다 구조.', heroDescription: ['디지털 자산과 글로벌 파생시장의 구조, 유동성, 확률을 연구합니다.', '시장 구조, 유동성, 확률, 실행을 중심으로 의사결정 체계를 연구합니다.'], explore: '프레임워크 보기', partnerCta: '시장 접근',
-    philosophyTitle: '우리는 확실성이 아닌 구조를 연구합니다.', philosophyBody: ['시장은 유동성, 포지셔닝, 변동성, 인간의 행동이 함께 만들어낸 구조입니다.', '하나의 지표나 방향성 의견을 확정적인 답으로 취급하지 않습니다.', '시나리오가 유효한 조건, 무효화되는 지점, 검증에 필요한 리스크를 함께 살펴봅니다.'], philosophyHighlight: '무효화 기준이 없는 시장 판단은 실전에서 사용할 수 없습니다.',
-    marketsTitle: '연구 대상 시장', marketsIntro: '디지털 자산과 글로벌 파생시장에 동일한 구조 분석 프레임워크를 적용합니다.', markets: [
-      { title: 'Digital Assets', description: '암호화폐 현물 및 파생시장의 가격 구조, 유동성, 포지셔닝, 변동성을 연구합니다.' }, { title: 'Global Indices', description: 'NASDAQ을 중심으로 주요 지수 파생시장과 위험선호·회피 흐름을 관찰합니다.' }, { title: 'Metals', description: '금 시장의 유동성, 실질금리, 달러, 세션 구조를 분석합니다.' }, { title: 'Energy', description: '원유 및 에너지 시장의 재고 발표, 지정학적 프리미엄, 변동성 확장을 관찰합니다.' },
-    ],
-    frameworkLabel: '프레임워크', frameworkTitle: '여섯 개의 렌즈. 하나의 원칙.', frameworkIntro: '확신과 확실성을 혼동하지 않고 관찰에서 실행으로 이동하기 위한 연구 순서입니다.', framework: [
-      { title: 'Structure', description: '방향을 판단하기 전에 현재 시장 전체 구조에서 가격과 파동의 위치를 확인합니다.' }, { title: 'Liquidity', description: '포지션이 갇힌 곳, 청산이 발생할 수 있는 곳, 가격이 주문을 찾을 가능성이 있는 곳을 살핍니다.' }, { title: 'Probability', description: '서로 독립적인 여러 조건을 결합해 시나리오의 확률적 가치를 평가합니다.' }, { title: 'Invalidation', description: '모든 시나리오는 틀렸음을 증명하는 가격과 조건을 정의해야 합니다.' }, { title: 'Time', description: '방향만으로는 부족합니다. 움직임이 언제 시작되고 구조가 얼마나 유효할지도 평가합니다.' }, { title: 'Execution', description: '진입, 리스크, 포지션 관리, 청산 기준은 최초 가설과 일관되어야 합니다.' },
-    ],
-    systemsTitle: 'Research. Validation. Execution.', systemsIntro: '반복 작업을 줄이고 시장 아이디어를 데이터로 검증하기 위한 내부 시스템을 개발합니다.', systems: [
-      { title: 'Market Scanners', description: '여러 구조적 조건이 동시에 겹치는 종목을 탐색합니다.' }, { title: 'Signal Validation', description: '신호 발생 이후 백테스트와 포워드 트래킹으로 행동을 측정합니다.' }, { title: 'Market Analytics', description: '구조, 모멘텀, 변동성, 포지셔닝, 시장 환경 데이터를 정리합니다.' }, { title: 'Risk Frameworks', description: '무효화, 불리한 움직임, 보유 시간, 포지션 생존 기준을 다룹니다.' }, { title: 'Research Automation', description: '시장 데이터를 수집·정리·검증·요약하는 반복 가능한 파이프라인입니다.' },
-    ], systemsNote: '이 시스템들은 지속적으로 검증 중인 내부 연구 도구이며, 수익을 보장하는 상품으로 제공되지 않습니다.',
-    principlesTitle: '독립적 연구를 위한 원칙', principlesIntro: '확실성이 없는 환경에서 판단하기 위한 절제된 과정입니다.', principles: [
-      { title: '서사보다 근거', description: '설득력 있는 이야기도 측정 가능한 근거 없이는 충분하지 않습니다.' }, { title: '확신보다 무효화', description: '수익 가능성을 보기 전에 시나리오가 실패하는 지점을 정의합니다.' }, { title: '최적화보다 견고성', description: '완벽한 과거 결과보다 여러 시장과 구간에서 안정적인 아이디어를 우선합니다.' }, { title: '충동보다 과정', description: '반복되는 의사결정은 감정이 아니라 체계에서 나와야 합니다.' }, { title: '수익보다 자본', description: '최대 수익보다 생존과 리스크 통제를 우선합니다.' },
-    ],
-    partnersTitle: '실행 인프라', partnersIntro: '디지털 자산, 토큰화 시장, 글로벌 파생시장에 접근하기 위한 실행 환경입니다. 각 플랫폼의 조건을 비교한 뒤 자신의 연구 방식과 매매 흐름에 맞는 환경을 선택하세요.', viewDetails: '플랫폼 보기', disclosure: '시장 연구와 실전 실행에 활용하는 플랫폼입니다. 일부 링크를 통해 사용자에게 추가 비용 없이 SkrrrrLabs가 지원을 받을 수 있습니다. 플랫폼별 제공 상품과 이용 가능 여부, 규제 조건은 지역에 따라 다를 수 있습니다. 모든 거래 및 투자 판단의 책임은 사용자 본인에게 있습니다.',
-    footerDescriptor: '시장 구조 연구', footerTagline: '예측보다 구조.', contactEmail: 'alpha@skrrrrlabs.com', contactHandle: '@skrrrrlabs',
+    ...common,
+    metaTitle: 'SkrrrrLabs — 독립 시장 구조 연구',
+    metaDescription: '디지털 자산과 글로벌 파생시장의 역사 데이터, 체계적 백테스트, 반복 가능한 트레이딩 프레임워크를 연구합니다.',
+    nav: nav.ko,
+    heroEyebrow: 'MARKET STRUCTURE · DATA · SYSTEMATIC RESEARCH',
+    heroTitle: '예측보다 구조.',
+    heroBody: 'SkrrrrLabs는 역사적 시장 데이터를 구조화되고 검증 가능한 트레이딩 프레임워크로 전환하는 독립 리서치 프로젝트입니다.',
+    heroBodySecondary: '현재는 이더리움 현물 ETF 승인 이후 시장 국면의 바이낸스 선별 데이터 약 600GB를 검증하고 있습니다.',
+    researchCta: '연구 과정 보기', platformsCta: '트레이딩 플랫폼', collaborationCta: '협업 문의',
+    pipeline: ['RAW DATA', 'SELECTION', 'NORMALIZATION', 'BACKTESTING', 'VALIDATION'],
+    statusLabel: 'CURRENT RESEARCH', statusTitle: '더 큰 숫자가 아닌, 선별된 데이터셋.',
+    statusIntro: '기존 바이낸스 역사 데이터 아카이브는 약 1TB입니다. 이더리움 현물 ETF 승인 이전 국면의 약 400GB는 레거시 데이터로 분류해 현재 검증에서 제외했습니다. 현재 시장 국면을 연구하기 위해 승인 이후 선별한 약 600GB를 활용하고 있습니다.',
+    statusNote: '구조, 변동성, 시간, 불리한 움직임, 실행 조건을 통과하기 전까지 어떤 전략도 검증된 것으로 제시하지 않습니다.',
+    metrics: [{ value: '약 1TB', label: '역사 데이터 아카이브' }, { value: '약 600GB', label: '선별 활성 데이터셋' }, { value: 'ACTIVE', label: '백테스트 및 검증' }],
+    statusRows: [['데이터 수집', '완료'], ['역사 데이터 보관', '완료'], ['시장 국면 분리', '진행 중'], ['데이터 검증', '진행 중'], ['전략 백테스트', '진행 중'], ['실행 테스트', '공개 전'], ['라이브 시스템', '미배포']],
+    processLabel: 'RESEARCH PROCESS', processTitle: '원시 데이터에서 의사결정 체계까지.', processIntro: '데이터를 더 많이 모으는 것만으로 우위가 생기지는 않습니다. 비교 가능한 조건을 정의하고 약한 가정을 거부하며, 살아남은 관찰을 반복 가능한 과정으로 전환합니다.',
+    process: [['시장 국면 정의', '구조적으로 다른 시장 환경을 분리한 뒤 테스트합니다.'], ['데이터셋 구축', '거래소 역사 데이터를 정제하고 정렬하며 정규화합니다.'], ['가설 수립', '구조, 유동성, 변동성, 시간, 무효화 조건을 명시합니다.'], ['백테스트', '결과, 불리한 움직임, 보유 시간, 실행 비용을 측정합니다.'], ['스트레스 테스트', '결과가 다른 상품과 시장 환경에서도 살아남는지 확인합니다.'], ['검증 또는 거부', '근거가 부족하면 가설을 폐기합니다.'], ['자동화', '반복 가능하고 측정 가능한 과정만 시스템으로 전환합니다.']],
+    marketsLabel: 'RESEARCH SCOPE', marketsTitle: '관찰 중인 시장.', marketsIntro: '디지털 자산이 현재의 주요 연구 대상입니다. 다른 시장은 프레임워크가 하나의 상품군을 넘어 적용되는지 확인하는 맥락으로 활용합니다.', markets: [{ title: 'Digital Assets', description: '거래소 역사 데이터, 파생 구조, 유동성 행동과 시장 국면을 연구합니다.', primary: true }, { title: 'NASDAQ', description: '지수 구조, 변동성, 거시 조건과 파생상품 행동을 관찰합니다.' }, { title: 'Gold', description: '달러 유동성, 실질 금리, 방어적 자금 흐름과 가격 구조를 관찰합니다.' }],
+    validationLabel: 'VALIDATION SCOPE', validationTitle: '한 번 작동한 패턴을 찾는 것이 목표가 아닙니다.', validationIntro: '언제, 어디서, 어떤 조건에서 작동을 멈추는지 확인하는 것이 목표입니다.', validation: ['구조', '무효화', '시간', '불리한 움직임', '실행 조건'],
+    principlesLabel: 'PRINCIPLES', principlesTitle: '정직한 연구를 위한 원칙.', principles: ['데이터가 믿음보다 먼저입니다.', '방향보다 맥락이 먼저입니다.', '수익보다 생존이 먼저입니다.', '확신보다 확률이 먼저입니다.', '감정보다 과정이 먼저입니다.', '배포보다 거부가 먼저입니다.'],
+    aboutLabel: 'ABOUT', aboutTitle: '독립적으로 설계합니다.', aboutBody: ['SkrrrrLabs는 트레이딩 의사결정은 신뢰하기 전에 먼저 테스트해야 한다는 믿음에서 시작한 독립 리서치 프로젝트입니다.', '디지털 자산 데이터에서 시작해 암호화폐, 지수, 금속 시장을 아우르는 연구 프레임워크로 확장하고 있습니다.', '현재는 역사 데이터 검증, 체계적 백테스트, 반복 가능한 의사결정 과정 설계에 집중합니다.', '고객 자금을 운용하거나 보장된 신호를 제공하지 않으며, 미완성 연구를 검증된 성과로 제시하지 않습니다.'],
+    collaborationLabel: 'COLLABORATION', collaborationTitle: '좋은 시스템은 하나의 분야만으로 만들어지지 않습니다.', collaborationBody: '시장 데이터, 백테스트, 실행 인프라, 리서치 자동화에 관심 있는 개발자, 데이터 엔지니어, 연구자, 시스템 트레이더와의 대화를 환영합니다.', collaborationNote: '영업 제안은 필요하지 않습니다. 명확한 문제, 유용한 전문성, 진지한 연구 질문이면 충분합니다.', collaborators: ['Python 개발자', '데이터 엔지니어', '퀀트 연구자', '시스템 트레이더', '시장 데이터 인프라 빌더', '리서치 파트너'], startConversation: '대화 시작하기',
+    platformsLabel: 'TRADING PLATFORMS', platformsTitle: '연구가 먼저, 실행은 그 다음입니다.', platformsIntro: 'SkrrrrLabs는 독립적으로 시장을 연구합니다. 거래 실행은 외부 플랫폼에서 이루어집니다.', openPlatform: '플랫폼 열기', affiliateDisclosure: '일부 외부 링크는 제휴 링크일 수 있으며 사용자에게 추가 비용 없이 SkrrrrLabs의 개발과 운영을 지원할 수 있습니다.',
+    footerDescriptor: 'Independent Market Structure Research', footerStatement: 'SkrrrrLabs는 독립 리서치 프로젝트입니다. 이 웹사이트의 내용은 투자 조언, 금융 조언 또는 미래 성과 보장이 아닙니다.', footerLinks: { process: '연구 과정', status: '연구 현황', markets: '연구 범위', about: '소개', collaboration: '협업', platforms: '트레이딩 플랫폼', risk: '위험 고지', affiliate: '제휴 고지', privacy: '개인정보', terms: '이용약관', contact: '문의' },
   },
 };
 
-copy.ko.heroDescription = ['시장은 무작위로 움직이지 않습니다.', '모든 판단에 앞서 가격, 유동성, 확률 뒤의 구조를 연구합니다.'];
-copy.ko.philosophyTitle = '예측을 넘어 구조로';
-copy.ko.philosophyBody = ['예측은 언제나 불확실합니다.', '구조는 관찰할 수 있습니다.', '실행에 앞서 조건을 확인하고, 확률을 측정하며, 무효화 기준을 정의합니다.'];
-copy.ko.philosophyHighlight = '무효화 기준이 분명할 때 시장 판단은 실전에서 유용합니다.';
-copy.ko.footerDescriptor = '시장 구조 연구';
-copy.ko.footerTagline = '연구로 시작하고, 실행으로 증명합니다.';
-
-Object.keys(copy).forEach((lang) => { copy[lang].partners = exchanges.map((exchange) => ({ ...exchange, detail: exchange.detail[lang] })); });
+Object.keys(copy).forEach((lang) => {
+  copy[lang].platforms = exchanges.map((exchange) => ({ ...exchange, detail: exchange.detail[lang] }));
+});
