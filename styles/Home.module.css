@@ -40,3 +40,22 @@
 }
 @media(max-width:900px){.nav{font-size:10px;letter-spacing:.1em}.heroInner{transform:none}.textAction{flex-basis:auto}}
 
+/* Final editorial polish: improve reading rhythm without changing the layout system. */
+.heroBodySecondary{font-size:15px;line-height:1.82;color:var(--paper);opacity:.72}
+#status .sectionLead>p{max-width:480px}
+#status .statusRow{padding-top:19px;padding-bottom:19px}
+#status .statusRow span:last-child[data-state="complete"]{color:var(--paper);opacity:1}
+#status .statusRow span:last-child[data-state="not-deployed"],
+#status .statusRow span:last-child[data-state="not-published"]{color:var(--muted);opacity:1}
+.pipeline{color:var(--paper)}
+.pipelineStep{padding-top:22px;padding-bottom:22px}
+.pipelineStep strong{color:var(--paper);opacity:.94}
+.site .primaryAction{transition:background-color 200ms ease,color 200ms ease,transform 200ms ease}
+.site .primaryAction:hover{transform:translateY(-1px)}
+.secondaryAction{transition:color 200ms ease,border-color 200ms ease}
+.secondaryAction:hover{border-color:var(--accent)}
+.nav a{transition:color 180ms ease,opacity 180ms ease}
+.nav a:hover{opacity:.82}
+.footerLinks{row-gap:20px;column-gap:38px}
+@media(max-width:540px){.heroBodySecondary{font-size:14px;line-height:1.8}.footerLinks{row-gap:18px;column-gap:30px}}
+
