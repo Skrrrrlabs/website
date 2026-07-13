@@ -53,26 +53,26 @@ export default function Home() {
           </div>
         </Reveal>
 
-        <Reveal as="section" className={styles.section} id="markets" aria-labelledby="markets-title">
+        <Reveal as="section" className={`${styles.section} ${styles.marketsSection}`} id="markets" aria-labelledby="markets-title">
           <SectionHeading index="02" label={t.nav.markets} />
           <div className={styles.titleRow}><h2 id="markets-title">{t.marketsTitle}</h2><p>{t.marketsIntro}</p></div>
           <MarketList items={t.markets} />
         </Reveal>
 
-        <Reveal as="section" className={`${styles.section} ${styles.lightSection}`} id="framework" aria-labelledby="framework-title">
+        <Reveal as="section" className={`${styles.section} ${styles.lightSection} ${styles.frameworkSection}`} id="framework" aria-labelledby="framework-title">
           <SectionHeading index="03" label={t.frameworkLabel} />
           <div className={styles.titleRow}><h2 id="framework-title">{t.frameworkTitle}</h2><p>{t.frameworkIntro}</p></div>
           <FrameworkList items={t.framework} />
         </Reveal>
 
-        <Reveal as="section" className={styles.section} id="systems" aria-labelledby="systems-title">
+        <Reveal as="section" className={`${styles.section} ${styles.systemsSection}`} id="systems" aria-labelledby="systems-title">
           <SectionHeading index="04" label={t.nav.systems} />
           <div className={styles.titleRow}><h2 id="systems-title">{t.systemsTitle}</h2><p>{t.systemsIntro}</p></div>
           <TopicList items={t.systems} />
           <p className={styles.systemsNote}>{t.systemsNote}</p>
         </Reveal>
 
-        <Reveal as="section" className={styles.section} id="principles" aria-labelledby="principles-title">
+        <Reveal as="section" className={`${styles.section} ${styles.principlesSection}`} id="principles" aria-labelledby="principles-title">
           <SectionHeading index="05" label={t.nav.principles} />
           <div className={styles.titleRow}><h2 id="principles-title">{t.principlesTitle}</h2><p>{t.principlesIntro}</p></div>
           <TopicList items={t.principles} />
