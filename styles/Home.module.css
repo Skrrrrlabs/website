@@ -22,5 +22,7 @@
 @media(max-width:900px){.nav{margin-left:0}}
 
 /* Keep the primary CTA text legible against its warm-white surface. */
-.site .primaryAction{color:var(--canvas)}
+.site .primaryAction{color:var(--canvas);background:var(--paper);overflow:visible;text-indent:0;mix-blend-mode:normal;line-height:1.2;position:relative;z-index:1}
+.site .primaryAction:hover{background:var(--canvas);color:var(--paper);border-color:var(--border)}
+.site .primaryAction:focus-visible{outline:2px solid var(--accent);outline-offset:4px;color:var(--canvas);background:var(--paper)}
 
