@@ -9,18 +9,14 @@ const nav = {
   en: [
     { href: '#status', label: 'Research' },
     { href: '#process', label: 'Process' },
-    { href: '#markets', label: 'Markets' },
-    { href: '#about', label: 'About' },
     { href: '#platforms', label: 'Platforms' },
-    { href: '#collaboration', label: 'Collaborate' },
+    { href: '#about', label: 'About' },
   ],
   ko: [
     { href: '#status', label: '연구 현황' },
     { href: '#process', label: '연구 과정' },
-    { href: '#markets', label: '연구 범위' },
-    { href: '#about', label: '소개' },
     { href: '#platforms', label: '플랫폼' },
-    { href: '#collaboration', label: '협업' },
+    { href: '#about', label: '소개' },
   ],
 };
 

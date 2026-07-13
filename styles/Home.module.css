@@ -17,3 +17,44 @@
 @media(max-width:900px){.header{height:72px}.headerActions{margin-left:auto}.menuButton{display:block}.nav{display:none;position:absolute;top:72px;left:0;right:0;padding:28px 24px 34px;background:rgba(8,8,8,.98);border-bottom:1px solid var(--border);flex-direction:column;align-items:flex-start;gap:25px}.navOpen{display:flex}.hero{padding-top:120px}.heroInner{grid-template-columns:1fr;gap:65px}.hero h1{font-size:clamp(66px,12vw,108px)}.pipeline{max-width:600px}.sectionLead{grid-template-columns:1fr;gap:35px;margin-top:64px}.statusTable{margin-left:0}.marketScope{grid-template-columns:1fr 1fr}.marketScope .primaryMarket{grid-row:auto;grid-column:1/-1;min-height:320px}.validationList{gap:0 6vw}.aboutGrid{grid-template-columns:1fr;gap:55px}.footer{grid-template-columns:1fr;gap:50px}.footerLinks{max-width:600px}}
 @media(max-width:540px){.hero{padding:112px 20px 28px;min-height:100svh}.hero h1{font-size:clamp(56px,16vw,82px)}.heroBody{font-size:17px;margin-top:32px}.heroBodySecondary{font-size:13px}.heroActions{align-items:stretch;flex-direction:column;margin-top:32px}.primaryAction,.secondaryAction{width:100%;min-width:0}.textAction{padding-left:0}.pipeline{padding-left:18px}.pipelineStep{grid-template-columns:38px 1fr;padding:17px 0}.heroBase{font-size:8px;gap:12px;flex-direction:column}.section{padding:82px 20px}.sectionHeader{grid-template-columns:54px 1fr}.sectionLead{margin-top:54px;margin-bottom:48px}.sectionLead h2{font-size:clamp(44px,13vw,68px)}.metricStrip{grid-template-columns:1fr;margin-bottom:48px}.metric{border-right:0;border-bottom:1px solid var(--border);padding:22px 0}.metric:not(:first-child){padding-left:0}.metric:last-child{border-bottom:0}.statusRow{grid-template-columns:1fr;gap:7px}.processList li{grid-template-columns:42px 1fr;gap:12px}.processList h3{font-size:25px}.processList p{font-size:14px}.marketScope{grid-template-columns:1fr}.marketScope .primaryMarket{grid-column:auto;min-height:290px}.marketScope article{min-height:210px}.marketScope .primaryMarket h3{font-size:60px}.validationList{grid-template-columns:1fr}.validationList li{font-size:17px}.principlesIntro{margin-top:60px;display:block}.principlesIntro h2{font-size:64px}.principlesIntro>span{display:block;margin-top:28px}.principlesList p{grid-template-columns:42px 1fr;gap:12px;padding:21px 0}.principlesList strong{font-size:31px}.aboutGrid{margin-top:60px}.aboutGrid h2{font-size:64px}.collaboratorList{margin-top:42px}.platformList article{grid-template-columns:38px 1fr;gap:12px}.platformList a{grid-column:2;width:max-content;margin-top:10px}.footer{padding:58px 20px 24px}.footerLinks{grid-template-columns:1fr;gap:15px}.footerBottom{font-size:8px;gap:10px}}
 
+/* Editorial header alignment: the navigation follows the wordmark instead of floating centrally. */
+@media(min-width:901px){.header{justify-content:flex-start}.nav{margin-left:90px;gap:30px}.headerActions{margin-left:auto}}
+@media(max-width:900px){.nav{margin-left:0}}
+
+/* Keep the primary CTA text legible against its warm-white surface. */
+.site .primaryAction{color:var(--canvas);background:var(--paper);overflow:visible;text-indent:0;mix-blend-mode:normal;line-height:1.2;position:relative;z-index:1}
+.site .primaryAction:hover{background:var(--canvas);color:var(--paper);border-color:var(--border)}
+.site .primaryAction:focus-visible{outline:2px solid var(--accent);outline-offset:4px;color:var(--canvas);background:var(--paper)}
+
+/* Final editorial balance for the desktop header, hero, and research status. */
+@media(min-width:901px){
+  .nav{margin-left:112px;gap:30px;font-size:11px;letter-spacing:.06em}
+  .heroInner{transform:translateY(-40px)}
+  .heroActions{column-gap:18px;row-gap:8px}
+  .textAction{flex-basis:100%}
+  #status .sectionLead{grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:6vw}
+  #status .sectionLead h2{font-size:clamp(42px,5.7vw,86px);max-width:720px}
+  #status .statusRow{font-size:11px;line-height:1.5;padding:17px 0}
+  #status .statusRow span:last-child[data-state="active"],
+  #status .statusRow span:last-child[data-state="in-progress"]{color:var(--accent)}
+}
+@media(max-width:900px){.nav{font-size:10px;letter-spacing:.1em}.heroInner{transform:none}.textAction{flex-basis:auto}}
+
+/* Final editorial polish: improve reading rhythm without changing the layout system. */
+.heroBodySecondary{font-size:15px;line-height:1.82;color:var(--paper);opacity:.72}
+#status .sectionLead>p{max-width:480px}
+#status .statusRow{padding-top:19px;padding-bottom:19px}
+#status .statusRow span:last-child[data-state="complete"]{color:var(--paper);opacity:1}
+#status .statusRow span:last-child[data-state="not-deployed"],
+#status .statusRow span:last-child[data-state="not-published"]{color:var(--muted);opacity:1}
+.pipeline{color:var(--paper)}
+.pipelineStep{padding-top:22px;padding-bottom:22px}
+.pipelineStep strong{color:var(--paper);opacity:.94}
+.site .primaryAction{transition:background-color 200ms ease,color 200ms ease,transform 200ms ease}
+.site .primaryAction:hover{transform:translateY(-1px)}
+.secondaryAction{transition:color 200ms ease,border-color 200ms ease}
+.secondaryAction:hover{border-color:var(--accent)}
+.nav a{transition:color 180ms ease,opacity 180ms ease}
+.nav a:hover{opacity:.82}
+.footerLinks{row-gap:20px;column-gap:38px}
+@media(max-width:540px){.heroBodySecondary{font-size:14px;line-height:1.8}.footerLinks{row-gap:18px;column-gap:30px}}
