@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from '../styles/Home.module.css';
 
-export default function Header({ lang, setLang, labels }) {
+export default function Header({ lang, setLang, links }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -10,22 +10,15 @@ export default function Header({ lang, setLang, labels }) {
     return () => window.removeEventListener('keydown', closeOnEscape);
   }, []);
 
-  const links = [
-    ['#research', labels.research], ['#markets', labels.markets], ['#framework', labels.framework],
-    ['#systems', labels.systems], ['#principles', labels.principles], ['#partners', labels.partners], ['#contact', labels.contact],
-  ];
-
   return (
     <header className={styles.header}>
-      <a className={styles.wordmark} href="#top" aria-label="SkrrrrLabs home">Skrrrr<span className={styles.wordmarkLabs}>Labs</span></a>
-      <div className={styles.headerControls}>
-        <button className={styles.langButton} onClick={() => setLang(lang === 'ko' ? 'en' : 'ko')} aria-label={lang === 'ko' ? 'Switch to English' : '한국어로 전환'}>{lang === 'ko' ? 'EN' : 'KR'}</button>
-        <button className={styles.menuButton} onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="primary-nav"><span>{open ? 'Close' : 'Menu'}</span></button>
-      </div>
+      <a className={styles.wordmark} href="#top" aria-label="SkrrrrLabs home">SkrrrrLabs</a>
       <nav id="primary-nav" className={`${styles.nav} ${open ? styles.navOpen : ''}`} aria-label="Primary navigation">
-        {links.map(([href, label]) => <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>)}
-        <button className={styles.desktopLang} onClick={() => setLang(lang === 'ko' ? 'en' : 'ko')} aria-label={lang === 'ko' ? 'Switch to English' : '한국어로 전환'}>{lang === 'ko' ? 'EN' : 'KR'}</button>
+        {links.map((link) => <a key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</a>)}
       </nav>
+      <div className={styles.headerActions}>
+        <button className={styles.menuButton} onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="primary-nav"><span className={styles.menuIcon} aria-hidden="true">{open ? '×' : '☰'}</span><span className={styles.srOnly}>{open ? 'Close menu' : 'Open menu'}</span></button>
+      </div>
     </header>
   );
 }
