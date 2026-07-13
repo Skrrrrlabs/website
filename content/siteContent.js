@@ -13,7 +13,7 @@ const nav = {
 export const copy = {
   en: {
     metaTitle: 'SkrrrrLabs — Market Structure Research', metaDescription: 'Independent research on digital assets and global derivatives. We study market structure, liquidity, probability, and execution.', nav: nav.en,
-    heroEyebrow: 'MARKET STRUCTURE RESEARCH', heroTitle: 'Structure Before Prediction.', heroDescription: ['Markets are rarely random.', 'We study the structure behind price, liquidity, and probability before every decision.'], explore: 'Explore the Framework', partnerCta: 'Partner Exchanges',
+    heroEyebrow: 'MARKET STRUCTURE RESEARCH', heroTitle: 'Structure Before Prediction.', heroDescription: ['Markets are rarely random.', 'We study the structure behind price, liquidity, and probability before every decision.'], explore: 'Explore the Framework', partnerCta: 'Market Access',
     philosophyTitle: 'Beyond Prediction', philosophyBody: ['Prediction is uncertain.', 'Structure is observable.', 'We identify conditions, measure probability, and define invalidation before execution.'], philosophyHighlight: 'A market view is useful only when its invalidation is clear.',
     marketsTitle: 'Markets We Observe', marketsIntro: 'Different markets move at different speeds. The need for structure remains the same.', markets: [
       { title: 'Digital Assets', description: 'The fastest market demands the clearest structure.' }, { title: 'Global Indices', description: 'Macro conditions shape opportunity.' }, { title: 'Metals', description: 'Gold reflects uncertainty, liquidity, and real yields.' }, { title: 'Energy', description: 'Volatility creates asymmetric opportunity.' },
@@ -32,7 +32,7 @@ export const copy = {
   },
   ko: {
     metaTitle: 'SkrrrrLabs — 시장 구조 연구', metaDescription: '디지털 자산과 글로벌 파생시장의 구조, 유동성, 확률, 실행을 연구합니다.', nav: nav.ko,
-    heroEyebrow: 'MARKET STRUCTURE RESEARCH', heroTitle: '예측보다 구조.', heroDescription: ['디지털 자산과 글로벌 파생시장의 구조, 유동성, 확률을 연구합니다.', '시장 구조, 유동성, 확률, 실행을 중심으로 의사결정 체계를 연구합니다.'], explore: '프레임워크 보기', partnerCta: '파트너 거래소',
+    heroEyebrow: 'MARKET STRUCTURE RESEARCH', heroTitle: '예측보다 구조.', heroDescription: ['디지털 자산과 글로벌 파생시장의 구조, 유동성, 확률을 연구합니다.', '시장 구조, 유동성, 확률, 실행을 중심으로 의사결정 체계를 연구합니다.'], explore: '프레임워크 보기', partnerCta: '시장 접근',
     philosophyTitle: '우리는 확실성이 아닌 구조를 연구합니다.', philosophyBody: ['시장은 유동성, 포지셔닝, 변동성, 인간의 행동이 함께 만들어낸 구조입니다.', '하나의 지표나 방향성 의견을 확정적인 답으로 취급하지 않습니다.', '시나리오가 유효한 조건, 무효화되는 지점, 검증에 필요한 리스크를 함께 살펴봅니다.'], philosophyHighlight: '무효화 기준이 없는 시장 판단은 실전에서 사용할 수 없습니다.',
     marketsTitle: '연구 대상 시장', marketsIntro: '디지털 자산과 글로벌 파생시장에 동일한 구조 분석 프레임워크를 적용합니다.', markets: [
       { title: 'Digital Assets', description: '암호화폐 현물 및 파생시장의 가격 구조, 유동성, 포지셔닝, 변동성을 연구합니다.' }, { title: 'Global Indices', description: 'NASDAQ을 중심으로 주요 지수 파생시장과 위험선호·회피 흐름을 관찰합니다.' }, { title: 'Metals', description: '금 시장의 유동성, 실질금리, 달러, 세션 구조를 분석합니다.' }, { title: 'Energy', description: '원유 및 에너지 시장의 재고 발표, 지정학적 프리미엄, 변동성 확장을 관찰합니다.' },

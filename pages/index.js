@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import Header from '../components/Header';
 import { SectionHeading, MarketList, FrameworkList, TopicList, PartnerList } from '../components/Sections';
+import Reveal from '../components/Reveal';
 import { copy } from '../content/siteContent';
 import styles from '../styles/Home.module.css';
 
@@ -35,54 +36,54 @@ export default function Home() {
         <section className={styles.hero} id="top" aria-labelledby="hero-title">
           <div className={styles.heroIndex}><span>{t.heroEyebrow}</span><span>Digital Assets · Global Derivatives</span></div>
           <div className={styles.heroBody}>
-            <h1 id="hero-title">{t.heroTitle}</h1>
-            <p className={styles.heroDescription}>{t.heroDescription.map((line) => <span key={line}>{line}<br /></span>)}</p>
+            <h1 className={styles.heroHeadline} id="hero-title">{t.heroTitle}</h1>
+            <p className={`${styles.heroDescription} ${styles.heroCopy}`}>{t.heroDescription.map((line) => <span key={line}>{line}<br /></span>)}</p>
           </div>
-          <div className={styles.heroActions}>
+          <div className={`${styles.heroActions} ${styles.heroButtons}`}>
             <a className={styles.primaryAction} href="#framework">{t.explore}<span aria-hidden="true">↓</span></a>
             <a className={styles.secondaryAction} href="#partners">{t.partnerCta}<span aria-hidden="true">↓</span></a>
           </div>
         </section>
 
-        <section className={styles.section} id="research" aria-labelledby="philosophy-title">
+        <Reveal as="section" className={styles.section} id="research" aria-labelledby="philosophy-title">
           <SectionHeading index="01" label={t.nav.research} />
           <div className={styles.philosophyGrid}>
             <h2 id="philosophy-title">{t.philosophyTitle}</h2>
             <div>{t.philosophyBody.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<p className={styles.highlight}>{t.philosophyHighlight}</p></div>
           </div>
-        </section>
+        </Reveal>
 
-        <section className={styles.section} id="markets" aria-labelledby="markets-title">
+        <Reveal as="section" className={styles.section} id="markets" aria-labelledby="markets-title">
           <SectionHeading index="02" label={t.nav.markets} />
           <div className={styles.titleRow}><h2 id="markets-title">{t.marketsTitle}</h2><p>{t.marketsIntro}</p></div>
           <MarketList items={t.markets} />
-        </section>
+        </Reveal>
 
-        <section className={`${styles.section} ${styles.lightSection}`} id="framework" aria-labelledby="framework-title">
+        <Reveal as="section" className={`${styles.section} ${styles.lightSection}`} id="framework" aria-labelledby="framework-title">
           <SectionHeading index="03" label={t.frameworkLabel} />
           <div className={styles.titleRow}><h2 id="framework-title">{t.frameworkTitle}</h2><p>{t.frameworkIntro}</p></div>
           <FrameworkList items={t.framework} />
-        </section>
+        </Reveal>
 
-        <section className={styles.section} id="systems" aria-labelledby="systems-title">
+        <Reveal as="section" className={styles.section} id="systems" aria-labelledby="systems-title">
           <SectionHeading index="04" label={t.nav.systems} />
           <div className={styles.titleRow}><h2 id="systems-title">{t.systemsTitle}</h2><p>{t.systemsIntro}</p></div>
           <TopicList items={t.systems} />
           <p className={styles.systemsNote}>{t.systemsNote}</p>
-        </section>
+        </Reveal>
 
-        <section className={styles.section} id="principles" aria-labelledby="principles-title">
+        <Reveal as="section" className={styles.section} id="principles" aria-labelledby="principles-title">
           <SectionHeading index="05" label={t.nav.principles} />
           <div className={styles.titleRow}><h2 id="principles-title">{t.principlesTitle}</h2><p>{t.principlesIntro}</p></div>
           <TopicList items={t.principles} />
-        </section>
+        </Reveal>
 
-        <section className={styles.partners} id="partners" aria-labelledby="partners-title">
+        <Reveal as="section" className={styles.partners} id="partners" aria-labelledby="partners-title">
           <SectionHeading index="06" label={t.nav.partners} />
           <div className={styles.titleRow}><h2 id="partners-title">{t.partnersTitle}</h2><p>{t.partnersIntro}</p></div>
           <PartnerList items={t.partners} buttonLabel={t.viewDetails} />
           <p className={styles.disclosure}>{t.disclosure}</p>
-        </section>
+        </Reveal>
       </main>
 
       <footer className={styles.footer} id="contact">
