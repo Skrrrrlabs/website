@@ -57,6 +57,7 @@ export default function Home() {
           <p className={styles.sectionNote}>{t.statusNote}</p>
           <MetricStrip metrics={t.metrics} />
           <StatusTable rows={t.statusRows} />
+          <a className={styles.researchArchiveLink} href="/research">Open the Public Research Archive<span aria-hidden="true">&rarr;</span></a>
         </Reveal>
 
         <Reveal as="section" className={`${styles.section} ${styles.processSection}`} id="process" aria-labelledby="process-title">
