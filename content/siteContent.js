@@ -7,7 +7,7 @@ export const exchanges = [
 
 const nav = {
   en: [
-    { href: '#status', label: 'Research' },
+    { href: '/research', label: 'Research' },
     { href: '#process', label: 'Process' },
     { href: '#platforms', label: 'Platforms' },
     { href: '#about', label: 'About' },
