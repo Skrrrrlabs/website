@@ -1,13 +1,13 @@
 export const researchSnapshot = {
-  asOf: '15 July 2026',
+  asOf: '17 July 2026',
   status: 'COLLECTING',
   description: 'A dated public snapshot of research infrastructure and validation activity. It is not a live trading feed.',
   metrics: [
     { value: '789GB', label: 'Trade-level archive', detail: 'Binance USDT-M Futures aggTrades' },
     { value: '27.8GB', label: 'Kline archive', detail: 'Multi-timeframe futures market history' },
-    { value: '14 DAYS', label: 'Minimum observation', detail: 'Forward-validation protocol' },
-    { value: '28', label: 'Candidate events', detail: 'Recorded in the current observation set' },
-    { value: '16', label: 'Completed observations', detail: 'At the snapshot date' },
+    { value: '5 / 14', label: 'Observation coverage', detail: 'Days in the forward-validation protocol' },
+    { value: '56', label: 'Candidate events', detail: 'Recorded in the current observation set' },
+    { value: '51', label: 'Completed observations', detail: 'At the snapshot date' },
     { value: '0', label: 'Processing errors', detail: 'Reported by the validation status record' },
   ],
 };
@@ -20,7 +20,7 @@ export const researchEntries = [
     title: 'Testing what survives after the hypothesis.',
     summary: 'A point-in-time observation protocol for separating promising historical behavior from evidence that persists after selection.',
     status: 'COLLECTING',
-    updated: '15 July 2026',
+    updated: '17 July 2026',
   },
   {
     slug: 'microstructure',
@@ -49,9 +49,9 @@ export const researchArticles = {
     dek: 'Historical results describe the past. Forward observation asks whether a hypothesis remains coherent after it has been written down and frozen.',
     facts: [
       ['Current state', 'Collecting'],
-      ['Minimum window', '14 days'],
-      ['Candidate events', '28'],
-      ['Completed observations', '16'],
+      ['Observation coverage', '5 of 14 days'],
+      ['Candidate events', '56'],
+      ['Completed observations', '51'],
       ['Processing errors', '0'],
     ],
     sections: [
@@ -146,4 +146,3 @@ export const researchArticles = {
     ],
   },
 };
-
