@@ -1,8 +1,11 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useState } from 'react';
 import styles from '../styles/Research.module.css';
 
 export default function ResearchLayout({ title, description, canonical, children }) {
+  const [navOpen, setNavOpen] = useState(false);
+
   return (
     <div className={styles.site}>
       <Head>
@@ -22,12 +25,26 @@ export default function ResearchLayout({ title, description, canonical, children
 
       <header className={styles.header}>
         <Link className={styles.wordmark} href="/">SkrrrrLabs</Link>
-        <nav aria-label="Research navigation">
-          <Link href="/">Home</Link>
-          <Link href="/research">Research</Link>
-          <Link href="/research/methodology">Methodology</Link>
-          <a href="mailto:alpha@skrrrrlabs.com">Contact</a>
+        <nav
+          id="research-navigation"
+          className={navOpen ? styles.navOpen : ''}
+          aria-label="Research navigation"
+        >
+          <Link href="/" onClick={() => setNavOpen(false)}>Home</Link>
+          <Link href="/research" onClick={() => setNavOpen(false)}>Research</Link>
+          <Link href="/research/methodology" onClick={() => setNavOpen(false)}>Methodology</Link>
+          <a href="mailto:alpha@skrrrrlabs.com" onClick={() => setNavOpen(false)}>Contact</a>
         </nav>
+        <button
+          type="button"
+          className={styles.menuButton}
+          aria-label={navOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={navOpen}
+          aria-controls="research-navigation"
+          onClick={() => setNavOpen((open) => !open)}
+        >
+          <span aria-hidden="true">{navOpen ? '×' : '☰'}</span>
+        </button>
       </header>
 
       {children}
@@ -46,4 +63,3 @@ export default function ResearchLayout({ title, description, canonical, children
     </div>
   );
 }
-
