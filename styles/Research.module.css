@@ -11,3 +11,20 @@
 @media(max-width:900px){.header{height:72px;justify-content:space-between}.header nav{margin-left:30px;gap:18px;font-size:9px}.indexHero{min-height:auto;padding-top:120px}.indexIntro,.snapshotHeading{grid-template-columns:1fr;gap:30px}.snapshotGrid{grid-template-columns:repeat(2,1fr)}.libraryList>a{grid-template-columns:50px 1fr}.entryState{grid-column:2;text-align:left;display:flex;gap:20px}.factStrip{grid-template-columns:repeat(2,1fr)}.articleBody{grid-template-columns:1fr}.articleBody aside{position:static}.footer{flex-direction:column}.footerMeta{justify-content:flex-start}}
 @media(max-width:620px){.header{position:relative}.header nav{display:none;position:absolute;z-index:10;top:72px;left:0;right:0;margin-left:0;padding:26px 20px 30px;background:rgba(8,8,8,.98);border-bottom:1px solid var(--border);flex-direction:column;align-items:flex-start;gap:22px}.header .navOpen{display:flex}.menuButton{display:block}.indexHero{padding-left:20px;padding-right:20px}.kicker,.sectionLabel{grid-template-columns:52px 1fr}.indexHero h1{font-size:clamp(60px,18vw,88px);margin-top:45px}.indexIntro{margin-left:0}.snapshot,.library{padding-left:20px;padding-right:20px}.snapshotHeading h2,.library>h2{font-size:58px}.snapshotGrid{grid-template-columns:1fr}.snapshotGrid>div{min-height:165px}.libraryList>a{grid-template-columns:38px 1fr;gap:12px}.libraryList h3{font-size:31px}.entryState{grid-column:2;display:block}.boundary{padding-left:20px;padding-right:20px}.boundary h2{font-size:66px}.boundary>p:last-child{margin-left:0}.articleHero{padding-left:20px;padding-right:20px}.articleMeta{display:flex;flex-wrap:wrap;gap:12px 20px}.articleMeta span:first-child{flex-basis:100%}.articleHero h1{font-size:66px}.articleHero>p{font-size:18px}.factStrip{grid-template-columns:1fr;margin:0 20px}.factStrip>div{min-height:100px}.articleBody{padding-left:20px;padding-right:20px}.articleSections section{grid-template-columns:38px 1fr;gap:12px}.articleSections p{font-size:15px}.articleEnd{flex-direction:column;padding-left:20px;padding-right:20px}.footer{padding-left:20px;padding-right:20px}}
 @media(prefers-reduced-motion:reduce){.site *{scroll-behavior:auto!important;transition:none!important}}
+
+/* Strategy-inspired institutional display system: typography only. */
+.wordmark{font-weight:700}
+.indexHero h1{font-family:'Manrope',Arial,sans-serif;font-size:clamp(66px,9.8vw,156px);font-weight:800;line-height:.84;letter-spacing:-.065em}
+.snapshotHeading h2,.library>h2{font-family:'Manrope',Arial,sans-serif;font-size:clamp(49px,6.6vw,101px);font-weight:800;line-height:.9;letter-spacing:-.055em}
+.snapshotGrid strong{font-family:'Manrope',Arial,sans-serif;font-weight:700;letter-spacing:-.045em}
+.libraryList h3{font-family:'Manrope',Arial,sans-serif;font-size:clamp(25px,2.9vw,42px);font-weight:700;line-height:1;letter-spacing:-.04em}
+.boundary h2{font-family:'Manrope',Arial,sans-serif;font-size:clamp(58px,8.4vw,128px);font-weight:800;line-height:.86;letter-spacing:-.065em}
+.articleHero h1{font-family:'Manrope',Arial,sans-serif;font-size:clamp(58px,8.4vw,132px);font-weight:800;line-height:.86;letter-spacing:-.065em}
+.factStrip strong{font-family:'Manrope',Arial,sans-serif;font-weight:700;letter-spacing:-.025em}
+.articleSections h2{font-family:'Manrope',Arial,sans-serif;font-size:clamp(26px,2.9vw,40px);font-weight:700;line-height:1;letter-spacing:-.04em}
+@media(max-width:620px){
+  .indexHero h1{font-size:clamp(56px,17.5vw,80px)}
+  .snapshotHeading h2,.library>h2{font-size:clamp(44px,14vw,64px)}
+  .boundary h2{font-size:clamp(54px,16.5vw,76px)}
+  .articleHero h1{font-size:clamp(50px,15.5vw,72px)}
+}
