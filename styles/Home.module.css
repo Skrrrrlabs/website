@@ -31,7 +31,7 @@
 /* Final editorial balance for the desktop header, hero, and research status. */
 @media(min-width:901px){
   .nav{margin-left:112px;gap:30px;font-size:11px;letter-spacing:.06em}
-  .heroInner{transform:translateY(-40px)}
+  .heroInner{transform:translateY(clamp(-100px,-10vh,-72px))}
   .heroActions{column-gap:18px;row-gap:8px}
   .textAction{flex-basis:100%}
   #status .sectionLead{grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:6vw}
