@@ -65,7 +65,7 @@
 @media(max-width:540px){.heroBodySecondary{font-size:14px;line-height:1.8}.footerLinks{row-gap:18px;column-gap:30px}}
 
 /* Strategy-inspired institutional display system: typography only. */
-.wordmark{font-family:'Manrope',Arial,sans-serif;font-weight:800}
+.wordmark{font-family:Arial,Helvetica,sans-serif;font-weight:800}
 .nav{font-weight:500}
 .hero h1{font-family:'Manrope',Arial,sans-serif;font-size:clamp(65px,8.35vw,133px);font-weight:800;line-height:.88;letter-spacing:-.065em}
 .heroBody{max-width:640px}
