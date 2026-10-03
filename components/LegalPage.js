@@ -6,13 +6,13 @@ export default function LegalPage({ title, eyebrow, intro, sections }) {
   return (
     <>
       <Head>
-        <title>{title} — SkrrrrLabs</title>
+        <title>{`${title} — SkrrrrLabs`}</title>
         <meta name="description" content={intro} />
       </Head>
       <main className={styles.page}>
         <header className={styles.header}>
           <Link href="/" className={styles.wordmark}>SkrrrrLabs</Link>
-          <Link href="/" className={styles.back}>Back to research</Link>
+          <Link href="/research" className={styles.back}>Back to research</Link>
         </header>
         <article className={styles.article}>
           <p className={styles.eyebrow}>{eyebrow}</p>
