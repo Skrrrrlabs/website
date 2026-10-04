@@ -1,4 +1,5 @@
 import styles from '../styles/Home.module.css';
+import { MarketChart } from './MarketVisual';
 
 export function SectionHeader({ index, label }) {
   return <div className={styles.sectionHeader}><span>{index}</span><span>{label}</span></div>;
@@ -58,7 +59,7 @@ export function ProcessList({ items }) {
 }
 
 export function MarketScope({ items }) {
-  return <div className={styles.marketScope}>{items.map((item, index) => <article className={item.primary ? styles.primaryMarket : ''} key={item.title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{item.title}</h3><p>{item.description}</p></article>)}</div>;
+  return <div className={styles.marketScope}>{items.map((item, index) => <article className={item.primary ? styles.primaryMarket : ''} key={item.title}><span>{String(index + 1).padStart(2, '0')}</span>{item.chart ? <MarketChart market={item.chart} /> : null}<h3>{item.title}</h3><p>{item.description}</p></article>)}</div>;
 }
 
 export function ValidationList({ items }) {
