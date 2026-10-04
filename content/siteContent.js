@@ -44,13 +44,6 @@ export const copy = {
     statusTitle: 'A filtered dataset, not a larger claim.',
     statusIntro: 'The original archive contains approximately 1TB of Binance historical market data. Around 400GB is classified as legacy data from the pre-Ethereum ETF approval period and excluded from active validation. The working dataset contains approximately 600GB of selected post-approval market data used to study the current market regime.',
     statusNote: 'No strategy is presented as validated until it survives testing across structure, volatility, time, adverse movement and execution conditions.',
-    dataset: {
-      title: 'Archive composition',
-      unit: '1 cell ≈ 10GB',
-      boundary: 'ETH spot ETF approval',
-      legacy: { size: '≈400GB', label: 'Legacy · pre-approval', note: 'Excluded from active validation' },
-      active: { size: '≈600GB', label: 'Active · post-approval', note: 'Used in current validation' },
-    },
     metrics: [
       { value: '≈1TB', label: 'Historical archive' },
       { value: '≈600GB', label: 'Selected active dataset' },
@@ -118,7 +111,6 @@ export const copy = {
     statusLabel: 'CURRENT RESEARCH', statusTitle: '더 큰 숫자가 아닌, 선별된 데이터셋.',
     statusIntro: '기존 바이낸스 역사 데이터 아카이브는 약 1TB입니다. 이더리움 현물 ETF 승인 이전 국면의 약 400GB는 레거시 데이터로 분류해 현재 검증에서 제외했습니다. 현재 시장 국면을 연구하기 위해 승인 이후 선별한 약 600GB를 활용하고 있습니다.',
     statusNote: '구조, 변동성, 시간, 불리한 움직임, 실행 조건을 통과하기 전까지 어떤 전략도 검증된 것으로 제시하지 않습니다.',
-    dataset: { title: '아카이브 구성', unit: '1칸 ≈ 10GB', boundary: '이더리움 현물 ETF 승인', legacy: { size: '약 400GB', label: '레거시 · 승인 이전', note: '현재 검증에서 제외' }, active: { size: '약 600GB', label: '활성 · 승인 이후', note: '현재 검증에 사용' } },
     metrics: [{ value: '약 1TB', label: '역사 데이터 아카이브' }, { value: '약 600GB', label: '선별 활성 데이터셋' }, { value: 'ACTIVE', label: '백테스트 및 검증' }],
     statusRows: [['데이터 수집', '완료'], ['역사 데이터 보관', '완료'], ['시장 국면 분리', '진행 중'], ['데이터 검증', '진행 중'], ['전략 백테스트', '진행 중'], ['실행 테스트', '공개 전'], ['라이브 시스템', '미배포']],
     processLabel: 'RESEARCH PROCESS', processTitle: '원시 데이터에서 의사결정 체계까지.', processIntro: '데이터를 더 많이 모으는 것만으로 우위가 생기지는 않습니다. 비교 가능한 조건을 정의하고 약한 가정을 거부하며, 살아남은 관찰을 반복 가능한 과정으로 전환합니다.',

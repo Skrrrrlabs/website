@@ -2,7 +2,8 @@ import Head from 'next/head';
 import { useState } from 'react';
 import Header from '../components/Header';
 import Reveal from '../components/Reveal';
-import { SectionHeader, Pipeline, MetricStrip, StatusTable, DatasetSplit, ProcessList, MarketScope, ValidationList, PrinciplesList, PlatformList } from '../components/Sections';
+import { SectionHeader, Pipeline, MetricStrip, StatusTable, CoverageTimeline, ProcessList, MarketScope, ValidationList, PrinciplesList, PlatformList } from '../components/Sections';
+import { coverage, coverageCopy } from '../content/dataCoverage';
 import { copy } from '../content/siteContent';
 import styles from '../styles/Home.module.css';
 
@@ -56,8 +57,9 @@ export default function Home() {
           <div className={styles.sectionLead}><h2 id="status-title">{t.statusTitle}</h2><p>{t.statusIntro}</p></div>
           <p className={styles.sectionNote}>{t.statusNote}</p>
           <MetricStrip metrics={t.metrics} />
+          <CoverageTimeline data={coverage} copy={coverageCopy[lang]} />
           <div className={styles.statusGrid}>
-            <DatasetSplit data={t.dataset} />
+            <p className={styles.archiveSummary}>{coverageCopy[lang].summary}</p>
             <div>
               <StatusTable rows={t.statusRows} />
               <a className={styles.researchArchiveLink} href="/research">Open the Public Research Archive<span aria-hidden="true">&rarr;</span></a>

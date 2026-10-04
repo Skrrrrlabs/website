@@ -12,17 +12,39 @@ export function MetricStrip({ metrics }) {
   return <div className={styles.metricStrip}>{metrics.map((metric) => <div className={styles.metric} key={metric.label}><strong>{metric.value}</strong><span>{metric.label}</span></div>)}</div>;
 }
 
-export function DatasetSplit({ data, legacyCells = 40, totalCells = 100 }) {
+const monthIndex = (value) => { const [year, month] = value.split('-').map(Number); return year * 12 + month - 1; };
+
+export function CoverageTimeline({ data, copy }) {
+  const first = monthIndex(data.start);
+  const span = monthIndex(data.end) + 1 - first;
+  const pos = (value) => ((monthIndex(value) - first) / span) * 100;
+  const boundary = pos(data.boundary);
+  const years = [];
+  for (let year = Number(data.start.slice(0, 4)); year <= Number(data.end.slice(0, 4)); year += 1) years.push(year);
   return (
-    <figure className={styles.datasetSplit} aria-label={`${data.title}: ${data.legacy.size} ${data.legacy.label}, ${data.active.size} ${data.active.label}`}>
-      <figcaption><span>{data.title}</span><span>{data.unit}</span></figcaption>
-      <div className={styles.waffle} aria-hidden="true">
-        {Array.from({ length: totalCells }, (_, index) => <i key={index} className={index < legacyCells ? styles.legacyCell : styles.activeCell} style={{ '--cell': index }} />)}
-        <b className={styles.regimeBoundary} style={{ '--row': legacyCells / 10 }}><span>{data.boundary}</span></b>
+    <figure className={styles.coverage} aria-label={`${copy.title}: ${copy.summary}`}>
+      <figcaption><span>{copy.title}</span><span>{copy.source}</span></figcaption>
+      <div className={styles.coverageRows} style={{ '--boundary': `${boundary}%` }}>
+        <div className={styles.coverageAxis} aria-hidden="true"><span /><span className={styles.coverageCount}>{copy.instruments}</span><span /></div>
+        {data.rows.map((row, index) => {
+          const left = pos(row.from);
+          const width = pos(row.to) + 100 / span - left;
+          const split = Math.min(100, Math.max(0, ((boundary - left) / width) * 100));
+          return (
+            <div className={styles.coverageRow} key={row.key}>
+              <span className={styles.coverageLabel}>{copy.rows[row.key]}</span>
+              <span className={styles.coverageCount}>{row.approx ? '≈' : ''}{row.instruments}</span>
+              <span className={styles.coverageTrack}><i style={{ left: `${left}%`, width: `${width}%`, '--split': `${split}%`, '--bar': index }} /></span>
+            </div>
+          );
+        })}
+        <div className={styles.coverageAxis} aria-hidden="true">
+          <span />
+          <span />
+          <span className={styles.coverageTrack}>{years.map((year) => <b key={year} style={{ left: `${pos(`${year}-01`)}%` }}>{year}</b>)}<em>{copy.boundary}</em></span>
+        </div>
       </div>
-      <dl className={styles.datasetLegend}>
-        {[['legacy', data.legacy], ['active', data.active]].map(([key, item]) => <div key={key} data-kind={key}><dt>{item.size}</dt><dd><strong>{item.label}</strong><span>{item.note}</span></dd></div>)}
-      </dl>
+      <div className={styles.coverageLegend}><span data-kind="legacy">{copy.legacy}</span><span data-kind="active">{copy.active}</span></div>
     </figure>
   );
 }
