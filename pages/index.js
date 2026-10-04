@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import Header from '../components/Header';
 import Reveal from '../components/Reveal';
-import { SectionHeader, Pipeline, MetricStrip, StatusTable, ProcessList, MarketScope, ValidationList, PrinciplesList, PlatformList } from '../components/Sections';
+import { SectionHeader, Pipeline, MetricStrip, StatusTable, DatasetSplit, ProcessList, MarketScope, ValidationList, PrinciplesList, PlatformList } from '../components/Sections';
 import { copy } from '../content/siteContent';
 import styles from '../styles/Home.module.css';
 
@@ -56,8 +56,13 @@ export default function Home() {
           <div className={styles.sectionLead}><h2 id="status-title">{t.statusTitle}</h2><p>{t.statusIntro}</p></div>
           <p className={styles.sectionNote}>{t.statusNote}</p>
           <MetricStrip metrics={t.metrics} />
-          <StatusTable rows={t.statusRows} />
-          <a className={styles.researchArchiveLink} href="/research">Open the Public Research Archive<span aria-hidden="true">&rarr;</span></a>
+          <div className={styles.statusGrid}>
+            <DatasetSplit data={t.dataset} />
+            <div>
+              <StatusTable rows={t.statusRows} />
+              <a className={styles.researchArchiveLink} href="/research">Open the Public Research Archive<span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
         </Reveal>
 
         <Reveal as="section" className={`${styles.section} ${styles.processSection}`} id="process" aria-labelledby="process-title">

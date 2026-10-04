@@ -85,3 +85,28 @@
 .pipelineStep:before{left:calc(-1 * var(--pipeline-inset) - 5px)}
 @media(max-width:540px){.pipeline{--pipeline-inset:18px}}
 
+
+/* Archive composition chart beside the status table. */
+.statusGrid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr);gap:clamp(40px,7vw,120px);align-items:start}
+.statusGrid .statusTable,.statusGrid .researchArchiveLink{margin-left:auto}
+.datasetSplit{margin:0;max-width:440px}
+.datasetSplit figcaption{display:flex;justify-content:space-between;gap:16px;margin-bottom:18px;font:10px 'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.datasetSplit figcaption span:last-child{color:var(--muted)}
+.waffle{--gap:5px;position:relative;display:grid;grid-template-columns:repeat(10,1fr);gap:var(--gap)}
+.waffle i{display:block;aspect-ratio:1;transition:opacity .45s ease-out,transform .45s ease-out;transition-delay:calc(var(--cell) * 9ms)}
+.legacyCell{border:1px solid rgba(255,255,255,.14);background:repeating-linear-gradient(135deg,rgba(255,255,255,.07) 0 1px,transparent 1px 5px)}
+.activeCell{background:var(--accent)}
+:global(.revealReady):not(:global(.revealVisible)) .waffle i{opacity:0;transform:scale(.6)}
+.regimeBoundary{position:absolute;left:-10px;right:-10px;top:calc(var(--row) * (100% + var(--gap)) / 10 - var(--gap) / 2);height:1px;background:var(--paper);pointer-events:none}
+.regimeBoundary span{position:absolute;right:10px;bottom:6px;padding:2px 6px;background:var(--canvas);color:var(--paper);font:500 9px 'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.datasetLegend{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:26px 0 0}
+.datasetLegend div{display:grid;gap:8px;padding-top:14px;border-top:1px solid var(--border)}
+.datasetLegend div[data-kind="active"]{border-top-color:var(--accent)}
+.datasetLegend dt{color:var(--paper);font-family:'Manrope',Arial,sans-serif;font-size:clamp(24px,2.4vw,34px);font-weight:700;letter-spacing:-.045em;line-height:1}
+.datasetLegend dd{display:grid;gap:5px;margin:0;font:10px/1.5 'DM Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.datasetLegend dd strong{font-weight:500;color:var(--secondary)}
+.datasetLegend div[data-kind="active"] dd strong{color:var(--accent)}
+/* The primary market no longer spans two rows, which left an empty grey cell. */
+.marketScope .primaryMarket{grid-row:auto}
+@media(max-width:900px){.statusGrid{grid-template-columns:1fr}.statusGrid .statusTable,.statusGrid .researchArchiveLink{margin-left:0}.datasetSplit{max-width:520px}}
+@media(max-width:540px){.datasetLegend{grid-template-columns:1fr;gap:16px}}
