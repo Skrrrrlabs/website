@@ -2,9 +2,11 @@ export const researchSnapshot = {
   asOf: '17 July 2026',
   status: 'COLLECTING',
   description: 'A dated public snapshot of research infrastructure and validation activity. It is not a live trading feed.',
+  // Archive sizes in this snapshot were recorded in GiB (1024³ bytes); the rest of the site uses GB (10⁹ bytes).
+  unitNote: 'Archive sizes in GiB (1024³ bytes). In GB: trade-level 847GB · klines 30GB.',
   metrics: [
-    { value: '789GB', label: 'Trade-level archive', detail: 'Binance USDT-M Futures aggTrades' },
-    { value: '27.8GB', label: 'Kline archive', detail: 'Multi-timeframe futures market history' },
+    { value: '789GiB', label: 'Trade-level archive', detail: 'Binance USDT-M Futures aggTrades' },
+    { value: '27.8GiB', label: 'Kline archive', detail: 'Multi-timeframe futures market history' },
     { value: '5 / 14', label: 'Observation coverage', detail: 'Days in the forward-validation protocol' },
     { value: '56', label: 'Candidate events', detail: 'Recorded in the current observation set' },
     { value: '51', label: 'Completed observations', detail: 'At the snapshot date' },

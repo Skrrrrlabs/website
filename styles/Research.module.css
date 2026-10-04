@@ -31,3 +31,6 @@
   .boundary h2{font-size:clamp(54px,16.5vw,76px)}
   .articleHero h1{font-size:clamp(48px,14.5vw,68px)}
 }
+
+/* GiB note under the snapshot date. */
+.unitNote{display:block;margin-top:10px;line-height:1.6}
