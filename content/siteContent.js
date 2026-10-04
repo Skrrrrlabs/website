@@ -92,7 +92,7 @@ export const copy = {
     platformsLabel: 'TRADING PLATFORMS',
     platformsTitle: 'Research first. Execution second.',
     platformsIntro: 'SkrrrrLabs conducts independent market research. Trading execution is performed through external platforms.',
-    openPlatform: 'Open platform',
+    openPlatform: 'Sign up',
     affiliateDisclosure: 'Some outbound links may be affiliate links and may support the continued development and operation of SkrrrrLabs at no additional cost to the user.',
     footerDescriptor: 'Independent Market Structure Research',
     footerStatement: 'SkrrrrLabs is an independent research project. Nothing on this website constitutes investment advice, financial advice or a guarantee of future performance.',
@@ -121,7 +121,7 @@ export const copy = {
     principlesLabel: 'PRINCIPLES', principlesTitle: '정직한 연구를 위한 원칙.', principles: ['데이터가 믿음보다 먼저입니다.', '방향보다 맥락이 먼저입니다.', '수익보다 생존이 먼저입니다.', '확신보다 확률이 먼저입니다.', '감정보다 과정이 먼저입니다.', '배포보다 거부가 먼저입니다.'],
     aboutLabel: 'ABOUT', aboutTitle: '독립적으로 설계합니다.', aboutBody: ['SkrrrrLabs는 트레이딩 의사결정은 신뢰하기 전에 먼저 테스트해야 한다는 믿음에서 시작한 독립 리서치 프로젝트입니다.', '디지털 자산 데이터에서 시작해 암호화폐, 지수, 금속 시장을 아우르는 연구 프레임워크로 확장하고 있습니다.', '현재는 역사 데이터 검증, 체계적 백테스트, 반복 가능한 의사결정 과정 설계에 집중합니다.', '고객 자금을 운용하거나 보장된 신호를 제공하지 않으며, 미완성 연구를 검증된 성과로 제시하지 않습니다.'],
     collaborationLabel: 'COLLABORATION', collaborationTitle: '좋은 시스템은 하나의 분야만으로 만들어지지 않습니다.', collaborationBody: '시장 데이터, 백테스트, 실행 인프라, 리서치 자동화에 관심 있는 개발자, 데이터 엔지니어, 연구자, 시스템 트레이더와의 대화를 환영합니다.', collaborationNote: '영업 제안은 필요하지 않습니다. 명확한 문제, 유용한 전문성, 진지한 연구 질문이면 충분합니다.', collaborators: ['Python 개발자', '데이터 엔지니어', '퀀트 연구자', '시스템 트레이더', '시장 데이터 인프라 빌더', '리서치 파트너'], startConversation: '대화 시작하기',
-    platformsLabel: 'TRADING PLATFORMS', platformsTitle: '연구가 먼저, 실행은 그 다음입니다.', platformsIntro: 'SkrrrrLabs는 독립적으로 시장을 연구합니다. 거래 실행은 외부 플랫폼에서 이루어집니다.', openPlatform: '플랫폼 열기', affiliateDisclosure: '일부 외부 링크는 제휴 링크일 수 있으며 사용자에게 추가 비용 없이 SkrrrrLabs의 개발과 운영을 지원할 수 있습니다.',
+    platformsLabel: 'TRADING PLATFORMS', platformsTitle: '연구가 먼저, 실행은 그 다음입니다.', platformsIntro: 'SkrrrrLabs는 독립적으로 시장을 연구합니다. 거래 실행은 외부 플랫폼에서 이루어집니다.', openPlatform: '가입하기', affiliateDisclosure: '일부 외부 링크는 제휴 링크일 수 있으며 사용자에게 추가 비용 없이 SkrrrrLabs의 개발과 운영을 지원할 수 있습니다.',
     footerDescriptor: 'Independent Market Structure Research', footerStatement: 'SkrrrrLabs는 독립 리서치 프로젝트입니다. 이 웹사이트의 내용은 투자 조언, 금융 조언 또는 미래 성과 보장이 아닙니다.', footerLinks: { process: '연구 과정', status: '연구 현황', markets: '연구 범위', about: '소개', collaboration: '협업', platforms: '트레이딩 플랫폼', risk: '위험 고지', affiliate: '제휴 고지', privacy: '개인정보', terms: '이용약관', contact: '문의' },
   },
 };
