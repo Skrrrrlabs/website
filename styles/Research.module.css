@@ -34,3 +34,7 @@
 
 /* GiB note under the snapshot date. */
 .unitNote{display:block;margin-top:10px;line-height:1.6}
+
+/* Mobile QA fixes: the open menu sits above content; nav and end-of-article links get comfortable tap areas. */
+.site>header{z-index:30}
+@media(max-width:900px){.header nav a,.articleEnd a{display:inline-flex;align-items:center;min-height:32px}}
