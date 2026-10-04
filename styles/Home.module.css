@@ -155,3 +155,11 @@
 .marketChartSecondary .marketQuote strong{font-size:clamp(16px,1.5vw,22px)}
 .marketChartSecondary .marketQuote span{color:var(--secondary);font-size:14px}
 .marketChartSecondary .marketQuote em{flex-basis:100%;margin-left:0}
+
+/* Hero: faint BTC trace behind the lower half, and a measured value on each pipeline step. */
+.hero{position:relative;overflow:hidden;isolation:isolate}
+.heroTrace{position:absolute;left:0;right:0;bottom:0;width:100%;height:34%;z-index:-1;pointer-events:none;-webkit-mask-image:linear-gradient(90deg,transparent 0,transparent 42%,#000 72%);mask-image:linear-gradient(90deg,transparent 0,transparent 42%,#000 72%)}
+.pipelineStep{grid-template-columns:48px 1fr auto}
+.pipelineDetail{font-style:normal;font-size:9px;letter-spacing:.08em;color:var(--muted);text-align:right}
+@media(max-width:540px){.pipelineStep{grid-template-columns:38px 1fr auto}.heroTrace{height:22%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 40%);mask-image:linear-gradient(90deg,transparent 0,#000 40%)}}
+@media(prefers-reduced-motion:no-preference){.heroTrace{animation:heroIn 1.2s ease-out both;animation-delay:.25s}}
