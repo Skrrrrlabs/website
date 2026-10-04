@@ -163,3 +163,9 @@
 .pipelineDetail{font-style:normal;font-size:9px;letter-spacing:.08em;color:var(--muted);text-align:right}
 @media(max-width:540px){.pipelineStep{grid-template-columns:38px 1fr auto}.heroTrace{height:22%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 40%);mask-image:linear-gradient(90deg,transparent 0,#000 40%)}}
 @media(prefers-reduced-motion:no-preference){.heroTrace{animation:heroIn 1.2s ease-out both;animation-delay:.25s}}
+
+/* Sign-up benefit shown under each platform description. */
+.platformInfo p{margin:0;font-size:14px;color:var(--secondary)}
+.platformBenefit{display:inline-flex;align-items:center;gap:8px;margin-top:9px;font:500 10px 'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.platformBenefit:before{content:'';width:6px;height:6px;border:1px solid var(--accent);transform:rotate(45deg)}
+@media(max-width:540px){.platformInfo{grid-column:2}}
