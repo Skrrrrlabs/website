@@ -12,7 +12,7 @@ export function MetricStrip({ metrics }) {
   return <div className={styles.metricStrip}>{metrics.map((metric) => <div className={styles.metric} key={metric.label}><strong>{metric.value}</strong><span>{metric.label}</span></div>)}</div>;
 }
 
-const monthIndex = (value) => { const [year, month] = value.split('-').map(Number); return year * 12 + month - 1; };
+const monthIndex = (value) => { const [year, month, day] = value.split('-').map(Number); return year * 12 + month - 1 + (day ? (day - 1) / new Date(Date.UTC(year, month, 0)).getUTCDate() : 0); };
 
 export function CoverageTimeline({ data, copy }) {
   const first = monthIndex(data.start);

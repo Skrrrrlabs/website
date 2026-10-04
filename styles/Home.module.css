@@ -102,7 +102,7 @@
 .coverageAxis b{position:absolute;top:0;transform:translateX(-50%);font:400 9px 'DM Mono',monospace;color:var(--muted)}
 .coverageAxis b:first-child{transform:none}
 .coverageRow .coverageTrack:after{content:'';position:absolute;left:var(--boundary);top:-14px;bottom:-14px;width:1px;background:var(--paper);opacity:.7}
-.coverageAxis em{position:absolute;left:var(--boundary);top:18px;padding-left:8px;border-left:1px solid var(--paper);font:500 9px/1 'DM Mono',monospace;font-style:normal;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);white-space:nowrap}
+.coverageAxis em{position:absolute;left:var(--boundary);top:18px;transform:translateX(-100%);padding-right:8px;border-right:1px solid var(--paper);font:500 9px/1 'DM Mono',monospace;font-style:normal;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);white-space:nowrap}
 .coverageRows>.coverageAxis:first-child{padding:0 0 10px;border-top:0}
 .coverageRows>.coverageAxis:first-child .coverageCount{color:var(--muted);font-weight:400;text-transform:uppercase;letter-spacing:.08em;font-size:9px}
 .coverageAxis:last-child{padding-bottom:34px}
@@ -116,4 +116,4 @@
 /* The primary market no longer spans two rows, which left an empty grey cell. */
 .marketScope .primaryMarket{grid-row:auto}
 @media(max-width:900px){.statusGrid{grid-template-columns:1fr}.statusGrid .statusTable,.statusGrid .researchArchiveLink{margin-left:0}}
-@media(max-width:640px){.coverageRow,.coverageAxis{grid-template-columns:1fr 40px;row-gap:8px}.coverageTrack{grid-column:1/-1}.coverageAxis>span:not(.coverageTrack){display:none}}
+@media(max-width:640px){.coverageAxis em{white-space:normal;max-width:var(--boundary);line-height:1.5;text-align:right}.coverageAxis:last-child{padding-bottom:48px}.coverageRow,.coverageAxis{grid-template-columns:1fr 40px;row-gap:8px}.coverageTrack{grid-column:1/-1}.coverageAxis>span:not(.coverageTrack){display:none}}
