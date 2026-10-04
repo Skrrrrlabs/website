@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import Header from '../components/Header';
 import Reveal from '../components/Reveal';
+import { HeroTrace } from '../components/MarketVisual';
 import { SectionHeader, Pipeline, MetricStrip, StatusTable, CoverageTimeline, ProcessList, MarketScope, ValidationList, PrinciplesList, PlatformList } from '../components/Sections';
 import { coverage, coverageCopy } from '../content/dataCoverage';
 import { copy } from '../content/siteContent';
@@ -35,6 +36,7 @@ export default function Home() {
 
       <main>
         <section className={styles.hero} id="top" aria-labelledby="hero-title">
+          <HeroTrace />
           <div className={styles.heroInner}>
             <div className={styles.heroCopyBlock}>
               <p className={styles.eyebrow}>{t.heroEyebrow}</p>
@@ -47,7 +49,7 @@ export default function Home() {
                 <a className={styles.textAction} href={`mailto:${t.contactEmail}`}>{t.collaborationCta}<span aria-hidden="true">↗</span></a>
               </div>
             </div>
-            <Pipeline steps={t.pipeline} />
+            <Pipeline steps={t.pipeline} details={t.pipelineDetail} />
           </div>
           <div className={styles.heroBase}><span>SKRRRRLABS / 01</span><span>INDEPENDENT RESEARCH PROJECT</span></div>
         </section>

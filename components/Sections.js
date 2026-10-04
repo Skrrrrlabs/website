@@ -5,8 +5,8 @@ export function SectionHeader({ index, label }) {
   return <div className={styles.sectionHeader}><span>{index}</span><span>{label}</span></div>;
 }
 
-export function Pipeline({ steps }) {
-  return <div className={styles.pipeline} aria-label="Research pipeline">{steps.map((step, index) => <div className={styles.pipelineStep} key={step}><span>{String(index + 1).padStart(2, '0')}</span><strong>{step}</strong></div>)}</div>;
+export function Pipeline({ steps, details = [] }) {
+  return <div className={styles.pipeline} aria-label="Research pipeline">{steps.map((step, index) => <div className={styles.pipelineStep} key={step}><span>{String(index + 1).padStart(2, '0')}</span><strong>{step}</strong>{details[index] ? <em className={styles.pipelineDetail}>{details[index]}</em> : null}</div>)}</div>;
 }
 
 export function MetricStrip({ metrics }) {

@@ -49,3 +49,15 @@ export function MarketChart({ market }) {
     </figure>
   );
 }
+
+// Faint BTC weekly-close trace (log scale) sitting behind the lower part of the hero.
+export function HeroTrace() {
+  const p = buildPath(marketWeekly.btc.closes);
+  return (
+    <svg className={styles.heroTrace} viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <defs><linearGradient id="heroTraceFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="var(--accent)" stopOpacity=".07" /><stop offset="1" stopColor="var(--accent)" stopOpacity="0" /></linearGradient></defs>
+      <path d={p.area} fill="url(#heroTraceFill)" />
+      <path d={p.line} fill="none" stroke="var(--accent)" strokeOpacity=".22" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+    </svg>
+  );
+}
