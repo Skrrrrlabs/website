@@ -70,5 +70,5 @@ export function PrinciplesList({ items }) {
 }
 
 export function PlatformList({ items, buttonLabel }) {
-  return <div className={styles.platformList}>{items.map((item, index) => <article key={item.name}><span>{String(index + 1).padStart(2, '0')}</span><div><h3>{item.name}</h3><p>{item.detail}</p></div><a href={item.href} target="_blank" rel="noreferrer sponsored" aria-label={`${buttonLabel}: ${item.name}`}>{buttonLabel}<span aria-hidden="true">↗</span></a></article>)}</div>;
+  return <div className={styles.platformList}>{items.map((item, index) => <article key={item.name}><span>{String(index + 1).padStart(2, '0')}</span><div className={styles.platformBrand}>{item.logo ? <img className={styles.platformLogo} src={item.logo} alt="" aria-hidden="true" loading="lazy" decoding="async" /> : null}<h3 className={item.logo ? styles.visuallyHidden : undefined}>{item.name}</h3></div><p>{item.detail}</p><a href={item.href} target="_blank" rel="noreferrer sponsored" aria-label={`${buttonLabel}: ${item.name}`}>{buttonLabel}<span aria-hidden="true">↗</span></a></article>)}</div>;
 }
