@@ -1,8 +1,8 @@
 export const exchanges = [
-  { name: 'Binance', logo: '/logos/binance.png', detail: { en: 'Primary source of current historical-data research', ko: '현재 역사 데이터 연구의 주요 출처' }, href: 'https://accounts.binance.com/register?ref=V5EBF1SH' },
-  { name: 'Bybit', logo: '/logos/bybit.png', detail: { en: 'Digital-asset derivatives platform', ko: '디지털 자산 파생상품 플랫폼' }, href: 'https://partner.bybit.com/b/skrrrr' },
-  { name: 'OKX', logo: '/logos/okx.png', detail: { en: 'Digital-asset trading platform', ko: '디지털 자산 거래 플랫폼' }, href: 'https://www.okx.com/join/SKRRRR' },
-  { name: 'Bitget', logo: '/logos/bitget.png', detail: { en: 'Digital-asset trading platform', ko: '디지털 자산 거래 플랫폼' }, href: 'https://partner.bitget.com/bg/5krrrr' },
+  { name: 'Binance', logo: '/logos/binance.png', detail: { en: 'Primary source of current historical-data research', ko: '현재 역사 데이터 연구의 주요 출처' }, benefit: { en: '10% off futures trading fees', ko: '선물 거래 수수료 10% 할인' }, href: 'https://accounts.binance.com/register?ref=V5EBF1SH' },
+  { name: 'Bybit', logo: '/logos/bybit.png', detail: { en: 'Digital-asset derivatives platform', ko: '디지털 자산 파생상품 플랫폼' }, benefit: { en: '20% trading-fee rebate', ko: '거래 수수료 20% 페이백' }, href: 'https://partner.bybit.com/b/skrrrr' },
+  { name: 'OKX', logo: '/logos/okx.png', detail: { en: 'Digital-asset trading platform', ko: '디지털 자산 거래 플랫폼' }, benefit: { en: '20% trading-fee rebate', ko: '거래 수수료 20% 페이백' }, href: 'https://www.okx.com/join/SKRRRR' },
+  { name: 'Bitget', logo: '/logos/bitget.png', detail: { en: 'Digital-asset trading platform', ko: '디지털 자산 거래 플랫폼' }, benefit: { en: '20% trading-fee rebate', ko: '거래 수수료 20% 페이백' }, href: 'https://partner.bitget.com/bg/5krrrr' },
 ];
 
 const nav = {
@@ -23,7 +23,7 @@ const nav = {
 const common = {
   contactEmail: 'alpha@skrrrrlabs.com',
   contactHandle: '@skrrrrlabs',
-  platforms: exchanges.map((exchange) => ({ ...exchange, detail: exchange.detail.en })),
+  platforms: exchanges.map((exchange) => ({ ...exchange, detail: exchange.detail.en, benefit: exchange.benefit.en })),
 };
 
 export const copy = {
@@ -127,5 +127,5 @@ export const copy = {
 };
 
 Object.keys(copy).forEach((lang) => {
-  copy[lang].platforms = exchanges.map((exchange) => ({ ...exchange, detail: exchange.detail[lang] }));
+  copy[lang].platforms = exchanges.map((exchange) => ({ ...exchange, detail: exchange.detail[lang], benefit: exchange.benefit[lang] }));
 });
