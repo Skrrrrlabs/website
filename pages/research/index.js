@@ -30,6 +30,7 @@ export default function ResearchIndex() {
             <div>
               <p>{researchSnapshot.description}</p>
               <span>AS OF {researchSnapshot.asOf}</span>
+              <span className={styles.unitNote}>{researchSnapshot.unitNote}</span>
             </div>
           </div>
           <div className={styles.snapshotGrid}>
