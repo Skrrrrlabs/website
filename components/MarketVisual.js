@@ -11,9 +11,9 @@ function buildPath(closes) {
 }
 
 const CAPTIONS = {
-  btc: ['BTCUSDT · weekly close · log', '2020 — 2026'],
-  nas: ['NAS100 · weekly · log', '2020 — 2026'],
-  gold: ['Gold · weekly · log', '2020 — 2026'],
+  btc: ['Binance perpetual · log', '2020 — 2026'],
+  nas: ['OANDA · log', '2020 — 2026'],
+  gold: ['TVC · log', '2020 — 2026'],
 };
 
 export function MarketChart({ market }) {
@@ -24,6 +24,11 @@ export function MarketChart({ market }) {
   const id = `fill-${market}`;
   return (
     <figure className={`${styles.marketChart} ${primary ? '' : styles.marketChartSecondary}`} aria-label={`${series.label} weekly close on a log scale, ${series.start} to ${series.end}`}>
+      <div className={styles.marketQuote}>
+        <strong>{series.ticker}</strong>
+        <span>{Math.round(series.closes[series.closes.length - 1]).toLocaleString('en-US')}</span>
+        <em>Close · {series.asOf}</em>
+      </div>
       <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" aria-hidden="true">
         {primary ? (
           <>
