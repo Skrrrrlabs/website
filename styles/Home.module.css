@@ -175,3 +175,10 @@
 .platformList article a:after{content:'';position:absolute;inset:0;z-index:1}
 .platformList article:hover a{border-color:var(--accent);color:var(--accent)}
 .platformList article:hover .platformLogo{opacity:1}
+
+/* Mobile QA fixes: the open menu must sit above page content; small text and links get readable sizes and tap areas. */
+.site>header{z-index:30}
+@media(max-width:900px){.footerLinks{gap:2px 34px}.footerLinks a{display:inline-flex;align-items:center;min-height:32px}}
+@media(max-width:540px){.heroBase,.footerBottom{font-size:9px}}
+@media(max-width:540px){.heroTrace{display:none}}
+.marketChart figcaption span{white-space:nowrap}
