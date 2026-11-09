@@ -3,7 +3,7 @@ export const exchanges = [
   { name: 'Bybit', logo: '/logos/bybit.png', detail: { en: 'Digital-asset derivatives platform', ko: '디지털 자산 파생상품 플랫폼' }, benefit: { en: '20% trading-fee rebate', ko: '거래 수수료 20% 페이백' }, href: 'https://partner.bybit.com/b/skrrrr' },
   { name: 'OKX', logo: '/logos/okx.png', detail: { en: 'Digital-asset trading platform', ko: '디지털 자산 거래 플랫폼' }, benefit: { en: '20% trading-fee rebate', ko: '거래 수수료 20% 페이백' }, href: 'https://www.okx.com/join/SKRRRR' },
   { name: 'Bitget', logo: '/logos/bitget.png', detail: { en: 'Digital-asset trading platform', ko: '디지털 자산 거래 플랫폼' }, benefit: { en: '20% trading-fee rebate', ko: '거래 수수료 20% 페이백' }, href: 'https://partner.bitget.com/bg/skrrrr1' },
-  { name: 'Coinone', detail: { en: 'Korean won digital-asset exchange', ko: '원화 디지털 자산 거래소' }, href: 'https://apps.coinone.co.kr/csyiatj' },
+  { name: 'Coinone', detail: { en: 'Korean won digital-asset exchange', ko: '원화 디지털 자산 거래소' }, benefit: { en: '₩4,000 sign-up reward', ko: '가입 시 4,000원 리워드' }, href: 'https://apps.coinone.co.kr/csyiatj' },
 ];
 
 const nav = {
