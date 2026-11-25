@@ -3,9 +3,9 @@ import { useState } from 'react';
 import Header from '../components/Header';
 import Reveal from '../components/Reveal';
 import { HeroTrace } from '../components/MarketVisual';
-import { SectionHeader, Pipeline, MetricStrip, StatusTable, CoverageTimeline, ProcessList, MarketScope, ValidationList, PrinciplesList, PlatformList } from '../components/Sections';
+import { SectionHeader, Pipeline, PartnerExchanges, MetricStrip, StatusTable, CoverageTimeline, ProcessList, MarketScope, ValidationList, PrinciplesList, PlatformList } from '../components/Sections';
 import { coverage, coverageCopy } from '../content/dataCoverage';
-import { copy } from '../content/siteContent';
+import { copy, partnerExchanges } from '../content/siteContent';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -49,7 +49,10 @@ export default function Home() {
                 <a className={styles.textAction} href={`mailto:${t.contactEmail}`}>{t.collaborationCta}<span aria-hidden="true">↗</span></a>
               </div>
             </div>
-            <Pipeline steps={t.pipeline} details={t.pipelineDetail} />
+            <div className={styles.heroAside}>
+              <PartnerExchanges data={partnerExchanges} />
+              <Pipeline steps={t.pipeline} details={t.pipelineDetail} />
+            </div>
           </div>
           <div className={styles.heroBase}><span>SKRRRRLABS / 01</span><span>INDEPENDENT RESEARCH PROJECT</span></div>
         </section>
