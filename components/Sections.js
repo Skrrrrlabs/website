@@ -9,6 +9,25 @@ export function Pipeline({ steps, details = [] }) {
   return <div className={styles.pipeline} aria-label="Research pipeline">{steps.map((step, index) => <div className={styles.pipelineStep} key={step}><span>{String(index + 1).padStart(2, '0')}</span><strong>{step}</strong>{details[index] ? <em className={styles.pipelineDetail}>{details[index]}</em> : null}</div>)}</div>;
 }
 
+export function PartnerExchanges({ data }) {
+  return (
+    <nav className={styles.partnerBlock} aria-labelledby="partner-exchanges-title" lang="en">
+      <p id="partner-exchanges-title" className={styles.partnerLabel}>{data.label}</p>
+      <div className={styles.partnerGrid}>
+        {data.items.map((item) => (
+          <a key={item.name} href={item.href} target="_blank" rel="sponsored noopener">
+            <img src={item.logo} alt="" aria-hidden="true" decoding="async" />
+            <span className={styles.visuallyHidden}>{item.name} (opens in a new tab)</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        ))}
+      </div>
+      <p className={styles.partnerNote}>{data.affiliateNote} <a href="/affiliate-disclosure">{data.affiliateLink}</a>.</p>
+      <p className={styles.partnerNote}>{data.riskNote} <a href="/risk-disclosure">{data.riskLink}</a>.</p>
+    </nav>
+  );
+}
+
 export function MetricStrip({ metrics }) {
   return <div className={styles.metricStrip}>{metrics.map((metric) => <div className={styles.metric} key={metric.label}><strong>{metric.value}</strong><span>{metric.label}</span></div>)}</div>;
 }

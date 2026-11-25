@@ -6,6 +6,22 @@ export const exchanges = [
   { name: 'Coinone', logo: '/logos/coinone.png', detail: { en: 'Korean crypto exchange with KRW trading', ko: '원화로 거래하는 국내 코인 거래소' }, benefit: { en: '₩4,000 sign-up reward', ko: '가입 시 4,000원 리워드' }, href: 'https://apps.coinone.co.kr/csyiatj' },
 ];
 
+// Hero shortcut to partner sign-up pages. English only by design. Each link
+// goes through the site's own short path, which vercel.json redirects (308)
+// to the referral sign-up page. No benefit figures here until confirmed.
+export const partnerExchanges = {
+  label: 'Partner exchanges',
+  items: ['Binance', 'Bybit', 'OKX', 'Bitget'].map((name) => ({
+    name,
+    href: `/${name.toLowerCase()}`,
+    logo: exchanges.find((exchange) => exchange.name === name).logo,
+  })),
+  affiliateNote: 'Affiliate links — we may earn a commission at no extra cost to you. See',
+  affiliateLink: 'Affiliate Disclosure',
+  riskNote: 'Trading digital assets and derivatives carries a high risk of loss. Read the',
+  riskLink: 'Risk Disclosure',
+};
+
 const nav = {
   en: [
     { href: '/research', label: 'Research' },

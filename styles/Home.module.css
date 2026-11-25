@@ -182,3 +182,28 @@
 @media(max-width:540px){.heroBase,.footerBottom{font-size:9px}}
 @media(max-width:540px){.heroTrace{display:none}}
 .marketChart figcaption span{white-space:nowrap}
+
+/* Partner exchanges shortcut in the hero. */
+.heroAside{display:grid;gap:44px;align-content:center}
+.partnerBlock{border:1px solid var(--border);padding:20px;background:rgba(255,255,255,.015)}
+.partnerLabel{margin:0 0 14px;font:500 10px 'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.partnerGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.partnerGrid a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:52px;padding:12px 14px;border:1px solid var(--border);color:var(--paper);font:10px 'DM Mono',monospace;transition:border-color .2s,background-color .2s}
+.partnerGrid a:hover{border-color:var(--accent);background:rgba(196,168,106,.06)}
+.partnerGrid a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.partnerGrid img{display:block;max-height:20px;max-width:100px;width:auto;height:auto;filter:brightness(0) invert(1)}
+.partnerGrid img[src$="binance.png"]{max-height:16px}
+.partnerNote{margin:12px 0 0;font:9px/1.6 'DM Mono',monospace;letter-spacing:.04em;color:var(--muted)}
+.partnerNote+.partnerNote{margin-top:4px}
+.partnerNote a{color:var(--secondary);text-decoration:underline;text-underline-offset:2px}
+.partnerNote a:hover{color:var(--paper)}
+/* Narrow screens: show the partner block right after the opening paragraph so it is above the fold. */
+@media(max-width:900px){
+  .heroInner{display:flex;flex-direction:column;align-items:stretch;gap:0}
+  .heroCopyBlock,.heroAside{display:contents}
+  .heroCopyBlock>*:nth-child(1){order:1}.heroCopyBlock>*:nth-child(2){order:2}.heroCopyBlock>*:nth-child(3){order:3}
+  .partnerBlock{order:4;margin-top:24px}
+  .heroCopyBlock>*:nth-child(4){order:5}.heroCopyBlock>*:nth-child(5){order:6}
+  .heroAside>*:last-child{order:7;margin-top:56px}
+}
+@media(max-width:540px){.partnerBlock{padding:14px}.partnerGrid a{min-height:46px;padding:10px 12px}.partnerGrid img{max-width:84px;max-height:18px}.partnerGrid img[src$="binance.png"]{max-height:14px}}
