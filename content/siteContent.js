@@ -24,15 +24,16 @@ export const partnerExchanges = {
 
 const nav = {
   en: [
+    { href: '/', label: 'Studio' },
     { href: '/research', label: 'Research' },
     { href: '#process', label: 'Process' },
-    { href: '#platforms', label: 'Platforms' },
+    { href: '/platforms', label: 'Platforms' },
     { href: '#about', label: 'About' },
   ],
   ko: [
     { href: '#status', label: '연구 현황' },
     { href: '#process', label: '연구 과정' },
-    { href: '#platforms', label: '플랫폼' },
+    { href: '/platforms', label: '플랫폼' },
     { href: '#about', label: '소개' },
   ],
 };
