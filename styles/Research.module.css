@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap');
 
 .site{--canvas:#080808;--surface:#101010;--paper:#f3f1ec;--secondary:#aaa79f;--muted:#77756f;--border:rgba(255,255,255,.12);--accent:#c4a86a;min-height:100vh;background:linear-gradient(135deg,#080808,#101010);color:var(--paper);font-family:Arial,Helvetica,sans-serif;overflow:hidden}.site *{box-sizing:border-box}.site a{color:inherit;text-decoration:none}.site:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.022;background-image:radial-gradient(circle at 18% 24%,rgba(255,255,255,.7) 0 .45px,transparent .7px),radial-gradient(circle at 76% 68%,rgba(255,255,255,.5) 0 .4px,transparent .65px);background-size:173px 173px,227px 227px}.site>header,.site>main,.site>footer{position:relative;z-index:1}
@@ -38,3 +39,6 @@
 /* Mobile QA fixes: the open menu sits above content; nav and end-of-article links get comfortable tap areas. */
 .site>header{z-index:30}
 @media(max-width:900px){.header nav a,.articleEnd a{display:inline-flex;align-items:center;min-height:32px}}
+
+/* 왼쪽 위 SkrrrrLabs = 명함 글꼴 (2026-11-26) */
+.wordmark{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:26px;letter-spacing:-.01em;line-height:1}

@@ -12,7 +12,7 @@ export default function Header({ lang, setLang, links }) {
 
   return (
     <header className={styles.header}>
-      <a className={styles.wordmark} href="#top" aria-label="SkrrrrLabs home">SkrrrrLabs</a>
+      <a className={styles.wordmark} href="/" aria-label="SkrrrrLabs home">SkrrrrLabs</a>
       <nav id="primary-nav" className={`${styles.nav} ${open ? styles.navOpen : ''}`} aria-label="Primary navigation">
         {links.map((link) => <a key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</a>)}
       </nav>
