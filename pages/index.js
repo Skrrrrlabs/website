@@ -42,7 +42,13 @@ export default function Studio() {
         <meta property="og:title" content={t.metaTitle} />
         <meta property="og:description" content={t.metaDescription} />
         <meta property="og:url" content="https://skrrrrlabs.com/" />
-        <meta name="twitter:card" content="summary" />
+        <meta property="og:image" content="https://www.skrrrrlabs.com/og-studio.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="SkrrrrLabs — Agentic Studio. Human Judgment, Agent Speed." />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@skrrrrlabs" />
+        <meta name="twitter:image" content="https://www.skrrrrlabs.com/og-studio.png" />
         <meta name="twitter:title" content={t.metaTitle} />
         <meta name="twitter:description" content={t.metaDescription} />
       </Head>
