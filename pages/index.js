@@ -4,8 +4,8 @@ import { studio, studioLinks } from '../content/studioContent';
 import styles from '../styles/Studio.module.css';
 
 // 옛 첫 화면(시장 리서치)의 # 주소로 들어온 사람을 새 자리로 보낸다.
-// 예: 유튜브 설명란의 skrrrrlabs.com/#platforms → /platforms
-const MOVED = { platforms: '/platforms', process: '/market#process', status: '/market#status', markets: '/market#markets', validation: '/market#validation', about: '/market#about', collaboration: '/market#collaboration', coverage: '/market#coverage', principles: '/market#principles' };
+// 예: 록체인 유튜브 설명란의 skrrrrlabs.com/#platforms → /market (리서치 간판 + 거래소 배너, 코인 시청자용 입구)
+const MOVED = { platforms: '/market', process: '/market#process', status: '/market#status', markets: '/market#markets', validation: '/market#validation', about: '/market#about', collaboration: '/market#collaboration', coverage: '/market#coverage', principles: '/market#principles' };
 
 export default function Studio() {
   const [lang, setLang] = useState('ko');
