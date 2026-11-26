@@ -3,9 +3,9 @@ import { useState } from 'react';
 import Header from '../components/Header';
 import Reveal from '../components/Reveal';
 import { HeroTrace } from '../components/MarketVisual';
-import { SectionHeader, Pipeline, MetricStrip, StatusTable, CoverageTimeline, ProcessList, MarketScope, ValidationList, PrinciplesList } from '../components/Sections';
+import { SectionHeader, Pipeline, PartnerExchanges, MetricStrip, StatusTable, CoverageTimeline, ProcessList, MarketScope, ValidationList, PrinciplesList } from '../components/Sections';
 import { coverage, coverageCopy } from '../content/dataCoverage';
-import { copy } from '../content/siteContent';
+import { copy, partnerExchanges } from '../content/siteContent';
 import styles from '../styles/Home.module.css';
 
 export default function MarketResearch() {
@@ -50,6 +50,7 @@ export default function MarketResearch() {
               </div>
             </div>
             <div className={styles.heroAside}>
+              <PartnerExchanges data={partnerExchanges} />
               <Pipeline steps={t.pipeline} details={t.pipelineDetail} />
             </div>
           </div>
